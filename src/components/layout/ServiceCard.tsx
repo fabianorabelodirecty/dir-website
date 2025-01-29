@@ -1,20 +1,39 @@
+import { useState } from "react";
 import { Service } from "../../utils/types/Service";
-import Button from "../ui/Button";
+import { Link } from "react-router-dom";
 
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
+    const [isHovering, setIsHovering] = useState<boolean>(false);
+
     return (
-        <>
-            <div className="bg-primary-400 border-white/50 border rounded-3xl overflow-hidden p-8 w-full relative">
-                <div className="flex flex-col relative z-10">
-                    <img src={service.logo} className="w-[60%] mb-10" />
-                    <p className="text-sm line-clamp-5 my-2">{service.desc}</p>
-                    <Button className="text-sm -mb-2 mt-2 bg-white/20" variant="secondary">
+        <div
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            className="group bg-primary-400 border-white/50 border 
+                        rounded-3xl overflow-hidden p-8 transition-transform duration-300
+                        w-72
+                        hover:z-20 hover:scale-110 absolute"
+        >
+            <div className="flex flex-col relative z-10">
+                <img src={service.logo} className="w-[60%] group-hover:w-[75%] mb-20 transition-all" />
+                <p className="text-sm my-2 transition-all line-clamp-6 group-hover:line-clamp-none">{service.desc}</p>
+                {isHovering && (
+                    <Link
+                        to={"/services" + service.page}
+                        className="text-sm mt-4 bg-white/20 opacity-0 transition-all
+                        group-hover:opacity-100 w-fit rounded-full px-6 py-2 text-white
+                        hover:opacity-50"
+                    >
                         Saiba mais
-                    </Button>
-                </div>
-                <img src={service.imgDetails} className="w-full absolute -bottom-1 left-0 z-0" />
+                    </Link>
+                )}
             </div>
-        </>
+            <img
+                src={service.imgDetails}
+                className="w-full absolute group-hover:h-[75%] object-cover -bottom-4 left-0 z-0"
+            />
+        </div>
     );
 };
+
 export default ServiceCard;

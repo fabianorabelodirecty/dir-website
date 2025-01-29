@@ -35,8 +35,8 @@ const PageWrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
                     onClick={() => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="aspect-square w-12 transition-all rounded-full fixed bottom-4 right-4 bg-dark-purple8/80 p-1 text-dark-mauve12 z-50 hover:opacity-50"
-                    aria-label={"Back to top"}
+                    className="aspect-square w-12 transition-all rounded-full fixed bottom-4 right-4 p-1 text-white z-50 hover:opacity-50 mix-blend-difference"
+                    aria-label="Back to top"
                 >
                     {"↑"}
                 </button>
