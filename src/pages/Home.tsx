@@ -58,7 +58,7 @@ const Home: React.FC = () => {
                                     Conheça um pouco sobre os serviços que oferecemos
                                 </h2>
                             </div>
-                            <div className="grid min-h-96 grid-rows-5 sm:grid-cols-2 lg:grid-cols-1 gap-4 mt-10">
+                            <div className="flex flex-row min-h-96 gap-4 mt-10 -ml-4">
                                 {services.map((service, index) => (
                                     <div key={index} className="w-full">
                                         <ServiceCard service={service} />
