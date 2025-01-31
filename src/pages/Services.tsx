@@ -46,15 +46,15 @@ const Services: React.FC = () => {
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
                     </div>
                 </section>
-                <section className="">
-                    <div className="absolute right-0 w-[14%] mt-12">
+                <section className="bg-black w-full mx-auto relative flex flex-col items-center justify-center text-white">
+                    <div className="absolute right-0 top-0 w-[14%] mt-12">
                         <img src={imgDetailsR} className="w-full h-full object-cover" />
                         <div
                             className="absolute inset-0 opacity-50 mix-blend-color"
                             style={{ backgroundColor: currentService?.color }}
                         />
                     </div>
-                    <div className="absolute left-0 w-[14%] mt-12">
+                    <div className="absolute left-0 top-0 w-[14%] mt-12">
                         <img src={imgDetailsL} className="w-full h-full object-cover" />
                         <div
                             className="absolute inset-0 opacity-50 mix-blend-color"
