@@ -4,7 +4,7 @@ import RouterManager from "./routes/routes";
 function App() {
     return (
         <>
-            <div className="App high-contrast">
+            <div className="App">
                 <PageWrapper>
                     <RouterManager />
                 </PageWrapper>
