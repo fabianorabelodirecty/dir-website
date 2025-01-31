@@ -33,7 +33,7 @@ const Home: React.FC = () => {
                     <section id="start" className="w-full max-w-[1280px] px-4">
                         <div className="w-full max-w-[90%] lg:max-w-[70%] h-[80svh] flex items-center justify-start">
                             <div className="flex flex-col items-start h-[80%] mt-[2%] gap-6">
-                                <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text5xl 2xl:text-7xl uppercase">
+                                <h1 className="font-bold text-4xl sm:text-4xl md:text-6xl lg:text6xl 2xl:text-7xl uppercase">
                                     Soluções personalizadas em Tecnologia
                                 </h1>
                                 <h2 className="font-extralight text-base">
