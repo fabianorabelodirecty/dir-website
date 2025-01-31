@@ -27,18 +27,19 @@ const Services: React.FC = () => {
                             <h1 className="text-6xl font-semibold">{currentService?.cta}</h1>
                             <p>{currentService?.contentText}</p>
                         </div>
-                        <div className="-mt-20">
-                            <div className="rounded-full h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
-                                <div
-                                    className="rounded-full aspect-square justify-center items-center flex border-[1rem]"
-                                    style={{ borderColor: currentService?.color }}
-                                >
-                                    <img src={currentService?.logo} className="w-3/4" />
-                                </div>
+                        <div className="-mt-20 relative">
+                            <div className="rounded-full animate-slow-spin h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
                                 <div
                                     className="p-2 absolute -right-2 rounded-full"
                                     style={{ backgroundColor: currentService?.color }}
                                 />
+                            </div>
+
+                            <div
+                                className="rounded-full m-10 absolute top-0 right-0 aspect-square justify-center items-center flex border-[1rem]"
+                                style={{ borderColor: currentService?.color }}
+                            >
+                                <img src={currentService?.logo} className="w-3/4" />
                             </div>
                         </div>
                     </div>
