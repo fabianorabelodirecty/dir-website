@@ -1,6 +1,6 @@
 import { About } from "../../utils/types/About";
 
-export const abouts: About[] = [
+export const AboutsAssets: About[] = [
     {
         tag: "Conformidade e Confiança",
         txt: "Todo o nosso trabalho é desenvolvido em conformidade com as leis e regulamentações vigentes, garantindo a máxima segurança para sua empresa.",

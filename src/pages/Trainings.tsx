@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { trainings } from "../assets/content/trainings";
+import { TrainingsAssets } from "../assets/content/TrainingsAssets";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import { CheckBadgeIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import ContactForm from "../components/layout/ContactForm";
@@ -8,7 +8,7 @@ import { useEffect } from "react";
 const Trainings: React.FC = () => {
     const { training } = useParams();
 
-    const currentTraining = trainings.find((item) => item?.page?.split("/")[1] === training);
+    const currentTraining = TrainingsAssets.find((item) => item?.page?.split("/")[1] === training);
 
     useEffect(() => {
         console.log(currentTraining);

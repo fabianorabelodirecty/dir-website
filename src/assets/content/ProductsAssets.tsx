@@ -1,7 +1,11 @@
-import { ArchiveBoxIcon, BuildingOffice2Icon, CursorArrowRaysIcon } from "@heroicons/react/24/outline";
+import {
+    ArchiveBoxIcon,
+    BuildingOffice2Icon,
+    CursorArrowRaysIcon,
+} from "@heroicons/react/24/outline";
 import { Product } from "../../utils/types/Product";
 
-export const products: Product[] = [
+export const ProductsAssets: Product[] = [
     {
         name: "Voluntários",
         cta: "Fortaleça sua rede de voluntariado com a plataforma Voluntários Directy",
@@ -13,7 +17,8 @@ export const products: Product[] = [
             "Preencha o formulário abaixo para saber mais sobre como o Voluntários Directy pode impulsionar a responsabilidade social na sua organização.",
         contentText:
             "O Voluntários Directy é uma plataforma digital inovadora que conecta empresas, colaboradores e projetos sociais, facilitando ações de voluntariado com um impacto real na comunidade. Ela oferece uma solução ágil e eficiente para engajar os colaboradores da sua empresa em causas sociais, transformando o voluntariado em uma ferramenta de impacto social e fortalecimento de marca.",
-        pagePhrase: "Transforme o voluntariado em um motor de transformação para sua empresa e para a comunidade.",
+        pagePhrase:
+            "Transforme o voluntariado em um motor de transformação para sua empresa e para a comunidade.",
         pageDesc:
             "Com o Voluntários Directy, as empresas podem incentivar e organizar ações de voluntariado de maneira prática e eficiente. Nossa plataforma possibilita o envio de convites automáticos para cada nova ação social, tornando a mobilização de colaboradores mais simples e eficaz. Além disso, ela permite o gerenciamento completo das iniciativas de voluntariado, com ferramentas de gestão financeira, indicadores de performance e a capacidade de conectar ações a causas específicas, potencializando o impacto das suas campanhas sociais.",
         reasons: [

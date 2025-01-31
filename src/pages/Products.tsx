@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { products } from "../assets/content/products";
+import { ProductsAssets } from "../assets/content/ProductsAssets";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import ContactForm from "../components/layout/ContactForm";
@@ -8,7 +8,7 @@ import ReasonsCard from "../components/layout/ReasonsCard";
 const Products: React.FC = () => {
     const { product } = useParams();
 
-    const currentProduct = products.find((item) => item?.page?.split("/")[1] === product);
+    const currentProduct = ProductsAssets.find((item) => item?.page?.split("/")[1] === product);
 
     return (
         <>

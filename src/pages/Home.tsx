@@ -1,8 +1,6 @@
 import { ArrowUpRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import Button from "../components/ui/Button";
 import ServiceCard from "../components/layout/ServiceCard";
-// import { Service } from "../utils/types/Service";
-// import { useState } from "react";
 import ProductCard from "../components/layout/ProductCard";
 import imgDetailsContact from "../assets/imgs/contact-details.png";
 import imgDetailsL from "../assets/imgs/detail-l.png";
@@ -10,15 +8,13 @@ import imgDetailsR from "../assets/imgs/detail-r.png";
 import { Link, useLocation } from "react-router-dom";
 import TrainingCard from "../components/layout/TrainingCard";
 import AboutCard from "../components/layout/AboutCard";
-import { services } from "../assets/content/services";
-import { products } from "../assets/content/products";
-import { trainings } from "../assets/content/trainings";
-import { abouts } from "../assets/content/about";
+import { services } from "../assets/content/ServicesAssets";
+import { ProductsAssets } from "../assets/content/ProductsAssets";
+import { TrainingsAssets } from "../assets/content/TrainingsAssets";
+import { AboutsAssets } from "../assets/content/AboutsAssets";
 import { useEffect } from "react";
-// import ParticlesComponent from "../components/layout/BackgroundParticles";
 
 const Home: React.FC = () => {
-    // const [hoveredService, setHoveredService] = useState<Service | undefined>(undefined);
     const location = useLocation();
 
     useEffect(() => {
@@ -33,7 +29,6 @@ const Home: React.FC = () => {
     return (
         <>
             <div>
-                {/* <ParticlesComponent /> */}
                 <div className="flex flex-col gap-48 w-full items-center relative z-10">
                     <section id="start" className="w-full max-w-[1280px]">
                         <div className="lg:max-w-[70%] h-[80svh] items-center justify-center">
@@ -78,9 +73,9 @@ const Home: React.FC = () => {
                             </h1>
                         </div>
                         <div className="flex flex-col mt-10 items-center justify-center gap-6 max-w-[1280px]">
-                            {products.map((product) => {
+                            {ProductsAssets.map((product, index) => {
                                 return (
-                                    <div className="w-fit -ml-4 max-w-[1280px]">
+                                    <div key={index} className="w-fit -ml-4 max-w-[1280px]">
                                         <ProductCard product={product} />
                                     </div>
                                 );
@@ -88,8 +83,8 @@ const Home: React.FC = () => {
                         </div>
                     </section>
                     <section id="trainings" className="w-full">
-                        {trainings.map((training) => (
-                            <div className="">
+                        {TrainingsAssets.map((training, index) => (
+                            <div key={index}>
                                 <img src={imgDetailsR} className="absolute right-0 w-[14%] mt-4" />
                                 <img src={imgDetailsL} className="absolute left-0 w-[14%] mt-4" />
                                 <div className="max-w-[1280px] mx-auto">
@@ -103,7 +98,7 @@ const Home: React.FC = () => {
                             <p className="font-bold text-5xl">
                                 SOMOS A <span className="text-petrol-400">DIRECTY</span>
                             </p>
-                            <AboutCard abouts={abouts} />
+                            <AboutCard abouts={AboutsAssets} />
                             <p className="font-light text-sm mt-6">
                                 Se você busca tecnologia de ponta, confiabilidade e soluções que
                                 fazem a diferença, a Directy é a escolha certa.

@@ -1,6 +1,6 @@
 import { Page } from "../../utils/types/Page";
 
-export const pages: Page[] = [
+export const PagesAssets: Page[] = [
     {
         title: "Início",
         target: "/home",

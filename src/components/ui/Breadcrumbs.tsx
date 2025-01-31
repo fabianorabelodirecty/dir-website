@@ -1,13 +1,13 @@
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { pages } from "../../assets/content/pages";
+import { PagesAssets } from "../../assets/content/PagesAssets";
 
 const findBreadcrumbPath = (pathname: string) => {
     const segments = pathname.split("/").filter(Boolean);
     const breadcrumbPath: { name: string; target: string }[] = [];
 
-    const findPath = (items: typeof pages, parentPath = "") => {
+    const findPath = (items: typeof PagesAssets, parentPath = "") => {
         for (const item of items) {
             const itemPath = parentPath + (item.target || "");
 
@@ -21,7 +21,7 @@ const findBreadcrumbPath = (pathname: string) => {
         }
     };
 
-    findPath(pages);
+    findPath(PagesAssets);
 
     return breadcrumbPath;
 };
@@ -31,7 +31,7 @@ const Breadcrumbs: React.FC<{ color?: string }> = ({ color = "white" }) => {
     const breadcrumbPages = findBreadcrumbPath(location.pathname);
 
     const getTarget = (itemTarget: string) => {
-        const page = pages.find((p) => p.target === itemTarget);
+        const page = PagesAssets.find((p) => p.target === itemTarget);
         return page?.subpages ? `/home${itemTarget.replace("/", "#")}` : itemTarget;
     };
 

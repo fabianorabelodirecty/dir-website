@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { services } from "../assets/content/services";
+import { services } from "../assets/content/ServicesAssets";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import { CheckBadgeIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import imgDetailsL from "../assets/imgs/detail-l.png";

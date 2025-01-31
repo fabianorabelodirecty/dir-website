@@ -1,6 +1,6 @@
 import { Training } from "../../utils/types/Training";
 
-export const trainings: Training[] = [
+export const TrainingsAssets: Training[] = [
     {
         page: "/bi",
         title: "Capacitações para Líderes e Equipes",
@@ -23,7 +23,8 @@ export const trainings: Training[] = [
             "Integração com múltiplas fontes de dados.",
             "Análise Preditiva com Power BI.",
         ],
-        titlePage: "Leve suas habilidades analíticas para o próximo nível com o treinamento de Power BI",
+        titlePage:
+            "Leve suas habilidades analíticas para o próximo nível com o treinamento de Power BI",
         ctaPage: "Entre em contato agora para saber mais sobre o próximo curso de Power BI",
     },
 ];
