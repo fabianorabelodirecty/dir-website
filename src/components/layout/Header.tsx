@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     return (
         <>
             <div
-                className={`flex items-center justify-between py-6 max-w-[1280px] w-full z-50 ${
+                className={`flex items-center justify-between relative py-6 max-w-[1280px] w-full z-50 ${
                     currentPage ? "text-black" : "text-white"
                 }`}
             >

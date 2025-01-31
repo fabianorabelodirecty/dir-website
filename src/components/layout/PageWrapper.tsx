@@ -24,7 +24,7 @@ const PageWrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
             <div className="size-full flex justify-center">
                 <div className="relative w-full mx-auto bg-fixed bg-black min-h-svh flex flex-col items-center justify-center">
                     <Header />
-                    <div className={`size-full min-h-svh`}>{children}</div>
+                    <div className={`size-full min-h-svh z-0`}>{children}</div>
                     <Footer />
                 </div>
             </div>
