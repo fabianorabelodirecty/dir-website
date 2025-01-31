@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { trainings } from "../assets/content/Trainings";
+import { trainings } from "../assets/content/trainings";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import { CheckBadgeIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import ContactForm from "../components/layout/ContactForm";
@@ -32,8 +32,12 @@ const Trainings: React.FC = () => {
                 <section className="w-full max-w-[1280px] flex flex-col gap-20">
                     <div className="flex flex-col gap-4">
                         <p className="uppercase font-bold text-sm">Benefícios</p>
-                        <p className="lg:max-w-[60%] font-bold text-4xl">{currentTraining?.phrase}</p>
-                        <p className="lg:max-w-[50%] text-sm mr-0 ml-auto">{currentTraining?.description}</p>
+                        <p className="lg:max-w-[60%] font-bold text-4xl">
+                            {currentTraining?.phrase}
+                        </p>
+                        <p className="lg:max-w-[50%] text-sm mr-0 ml-auto">
+                            {currentTraining?.description}
+                        </p>
                     </div>
                     <div className="flex flex-col text-left gap-4 mx-auto">
                         {currentTraining?.benefits?.map((benefit) => (

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { products } from "../assets/content/Products";
+import { products } from "../assets/content/products";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import ContactForm from "../components/layout/ContactForm";
@@ -42,8 +42,12 @@ const Products: React.FC = () => {
                 <section className="w-full max-w-[1280px] flex flex-col gap-20">
                     <div className="flex flex-col gap-4">
                         <p className="uppercase font-bold text-sm">Benefícios</p>
-                        <p className="lg:max-w-[60%] font-bold text-4xl">{currentProduct?.pagePhrase}</p>
-                        <p className="lg:max-w-[50%] text-sm mr-0 ml-auto">{currentProduct?.pageDesc}</p>
+                        <p className="lg:max-w-[60%] font-bold text-4xl">
+                            {currentProduct?.pagePhrase}
+                        </p>
+                        <p className="lg:max-w-[50%] text-sm mr-0 ml-auto">
+                            {currentProduct?.pageDesc}
+                        </p>
                     </div>
                     <div className="w-full">
                         {currentProduct?.reasons?.map((item, i) => {
@@ -58,7 +62,10 @@ const Products: React.FC = () => {
                 </section>
                 <section className="w-full bg-white p-10 py-30 text-black">
                     <div className="max-w-[1280px] mx-auto">
-                        <ContactForm title={currentProduct?.contactTitle} sub={currentProduct?.contactSub} />
+                        <ContactForm
+                            title={currentProduct?.contactTitle}
+                            sub={currentProduct?.contactSub}
+                        />
                     </div>
                 </section>
             </div>

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { services } from "../assets/content/Services";
+import { services } from "../assets/content/services";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import { CheckBadgeIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import imgDetailsL from "../assets/imgs/detail-l.png";
@@ -18,7 +18,10 @@ const Services: React.FC = () => {
                     <Breadcrumbs color={currentService?.color} />
                     <div className="flex flex-row gap-40 justify-between  h-full min-h-[60svh]">
                         <div className="lg:max-w-[50%] flex flex-col gap-6">
-                            <p className="uppercase font-bold -mb-2" style={{ color: currentService?.color }}>
+                            <p
+                                className="uppercase font-bold -mb-2"
+                                style={{ color: currentService?.color }}
+                            >
                                 Directy {currentService?.name}
                             </p>
                             <h1 className="text-6xl font-semibold">{currentService?.cta}</h1>
@@ -68,7 +71,10 @@ const Services: React.FC = () => {
                         <div className="flex flex-col text-left gap-4 mx-auto">
                             {currentService?.reasons?.map((item) => (
                                 <div className="flex flex-row gap-4">
-                                    <CheckBadgeIcon className="size-6" style={{ color: currentService?.color }} />
+                                    <CheckBadgeIcon
+                                        className="size-6"
+                                        style={{ color: currentService?.color }}
+                                    />
                                     <p>{item}</p>
                                 </div>
                             ))}

@@ -10,10 +10,10 @@ import imgDetailsR from "../assets/imgs/detail-r.png";
 import { Link, useLocation } from "react-router-dom";
 import TrainingCard from "../components/layout/TrainingCard";
 import AboutCard from "../components/layout/AboutCard";
-import { services } from "../assets/content/Services";
-import { products } from "../assets/content/Products";
-import { trainings } from "../assets/content/Trainings";
-import { abouts } from "../assets/content/About";
+import { services } from "../assets/content/services";
+import { products } from "../assets/content/products";
+import { trainings } from "../assets/content/trainings";
+import { abouts } from "../assets/content/about";
 import { useEffect } from "react";
 // import ParticlesComponent from "../components/layout/BackgroundParticles";
 
@@ -42,8 +42,8 @@ const Home: React.FC = () => {
                                     Soluções personalizadas em Tecnologia
                                 </h1>
                                 <h2 className="font-extralight">
-                                    Automatize processos, otimize recursos e transforme a operação da sua empresa com as
-                                    soluções tecnológicas da Directy.
+                                    Automatize processos, otimize recursos e transforme a operação
+                                    da sua empresa com as soluções tecnológicas da Directy.
                                 </h2>
                                 <Button className="mt-[2%]">Entre em contato</Button>
                             </div>
@@ -55,7 +55,9 @@ const Home: React.FC = () => {
                     <section id="services" className="bg-white w-full">
                         <div className="w-full max-w-[1280px] mx-auto py-20">
                             <div className="flex flex-col items-left h-[80%] mt-[2%] justify-center gap-6">
-                                <h1 className="text-center font-bold text-5xl uppercase text-black">Nossos serviços</h1>
+                                <h1 className="text-center font-bold text-5xl uppercase text-black">
+                                    Nossos serviços
+                                </h1>
                                 <h2 className="text-center font-extralight text-black">
                                     Conheça um pouco sobre os serviços que oferecemos
                                 </h2>
@@ -71,7 +73,9 @@ const Home: React.FC = () => {
                     </section>
                     <section id="products" className="w-full max-w-[1280px]">
                         <div className="flex flex-col items-left h-[80%] mt-[2%] justify-center gap-6">
-                            <h1 className="text-center font-bold text-5xl uppercase">Nossos produtos</h1>
+                            <h1 className="text-center font-bold text-5xl uppercase">
+                                Nossos produtos
+                            </h1>
                         </div>
                         <div className="flex flex-col mt-10 items-center justify-center gap-6 max-w-[1280px]">
                             {products.map((product) => {
@@ -101,8 +105,8 @@ const Home: React.FC = () => {
                             </p>
                             <AboutCard abouts={abouts} />
                             <p className="font-light text-sm mt-6">
-                                Se você busca tecnologia de ponta, confiabilidade e soluções que fazem a diferença, a
-                                Directy é a escolha certa.
+                                Se você busca tecnologia de ponta, confiabilidade e soluções que
+                                fazem a diferença, a Directy é a escolha certa.
                             </p>
                             <Link
                                 to="/contact"
@@ -113,15 +117,21 @@ const Home: React.FC = () => {
                             </Link>
                         </div>
                     </section>
-                    <section id="contact" className="mb-28 relative w-full flex flex-col items-center gap-16">
+                    <section
+                        id="contact"
+                        className="mb-28 relative w-full flex flex-col items-center gap-16"
+                    >
                         <p className="text-center text-5xl font-bold lg:max-w-[50svw] mx-auto z-10">
                             Vamos criar algo incrível juntos?
                         </p>
                         <p className="font-light text-sm text-center lg:max-w-[50svw] -mb-5 -mt-6">
-                            Sua parceria em soluções inteligentes, personalizadas e seguras para negócios que querem
-                            inovar e crescer.
+                            Sua parceria em soluções inteligentes, personalizadas e seguras para
+                            negócios que querem inovar e crescer.
                         </p>
-                        <Link to="/contact" className="rounded-full border border-white px-6 py-2 mx-auto w-fit z-10">
+                        <Link
+                            to="/contact"
+                            className="rounded-full border border-white px-6 py-2 mx-auto w-fit z-10"
+                        >
                             Entre em contato
                         </Link>
                         <img src={imgDetailsContact} className="-mt-40 z-0" />

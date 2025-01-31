@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { pages } from "../../assets/content/Pages";
+import { pages } from "../../assets/content/pages";
 
 const findBreadcrumbPath = (pathname: string) => {
     const segments = pathname.split("/").filter(Boolean);
@@ -43,7 +43,9 @@ const Breadcrumbs: React.FC<{ color?: string }> = ({ color = "white" }) => {
                     <React.Fragment key={item.name}>
                         <Link
                             to={getTarget(item.target)}
-                            className={`hover:-translate-y-0.5 transition-all ${isCurrentPage ? "font-bold" : ""}`}
+                            className={`hover:-translate-y-0.5 transition-all ${
+                                isCurrentPage ? "font-bold" : ""
+                            }`}
                             style={{ color: isCurrentPage ? color : "" }}
                         >
                             {item.name}

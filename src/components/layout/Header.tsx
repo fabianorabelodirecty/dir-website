@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Page } from "../../utils/types/Page";
 import imgWhiteLogo from "../../assets/imgs/white_logo.png";
 import { Link } from "react-router-dom";
-import { pages } from "../../assets/content/Pages";
+import { pages } from "../../assets/content/pages";
 
 const Header: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<Page | undefined>(undefined);
@@ -15,7 +15,11 @@ const Header: React.FC = () => {
                 }`}
             >
                 <Link to={"/"} className="z-20">
-                    <img src={imgWhiteLogo} className={currentPage ? "filter brightness-0" : ""} alt="Logo" />
+                    <img
+                        src={imgWhiteLogo}
+                        className={currentPage ? "filter brightness-0" : ""}
+                        alt="Logo"
+                    />
                 </Link>
 
                 <div className="flex flex-row items-center ml-16 gap-8 z-20">
