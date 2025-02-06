@@ -17,11 +17,7 @@ const Header: React.FC = () => {
                 }`}
             >
                 <Link to={"/"} className="z-20">
-                    <img
-                        src={imgWhiteLogo}
-                        className={currentPage ? "filter brightness-0" : ""}
-                        alt="Logo"
-                    />
+                    <img src={imgWhiteLogo} className={currentPage ? "filter brightness-0" : ""} alt="Logo" />
                 </Link>
 
                 <button className="lg:hidden z-20" onClick={() => setMenuOpen(!menuOpen)}>
@@ -34,10 +30,7 @@ const Header: React.FC = () => {
 
                 <div className="hidden lg:flex items-center ml-16 gap-8 z-20">
                     {PagesAssets.map((page) => (
-                        <div
-                            key={page.title}
-                            onMouseEnter={() => page.subpages?.length && setCurrentPage(page)}
-                        >
+                        <div key={page.title} onMouseEnter={() => page.subpages?.length && setCurrentPage(page)}>
                             {!page.subpages?.length && page.target ? (
                                 <Link
                                     onClick={() => setCurrentPage(undefined)}
@@ -47,10 +40,7 @@ const Header: React.FC = () => {
                                     {page.title}
                                 </Link>
                             ) : (
-                                <button
-                                    type="button"
-                                    className="hover:bg-gray-400/20 p-2 px-8 rounded-full"
-                                >
+                                <button type="button" className="hover:bg-gray-400/20 p-2 px-8 rounded-full">
                                     {page.title}
                                 </button>
                             )}
@@ -58,8 +48,10 @@ const Header: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="hidden lg:block mr-0 ml-auto z-20">
-                    <Link to={"/contact"}>{"Contato"}</Link>
+                <div className="hidden lg:block mr-0 ml-auto z-20 ">
+                    <Link to={"/contact"} className="hover:bg-gray-400/20 p-2 px-8 rounded-full">
+                        {"Contato"}
+                    </Link>
                 </div>
             </div>
 
@@ -68,11 +60,7 @@ const Header: React.FC = () => {
                     {PagesAssets.map((page) => (
                         <div key={page.title}>
                             {!page.subpages?.length && page.target ? (
-                                <Link
-                                    onClick={() => setMenuOpen(false)}
-                                    to={page.target}
-                                    className="block p-2"
-                                >
+                                <Link onClick={() => setMenuOpen(false)} to={page.target} className="block p-2">
                                     {page.title}
                                 </Link>
                             ) : (
@@ -94,7 +82,11 @@ const Header: React.FC = () => {
                             )}
                         </div>
                     ))}
-                    <Link onClick={() => setMenuOpen(false)} to={"/contact"} className="block p-2">
+                    <Link
+                        onClick={() => setMenuOpen(false)}
+                        to={"/contact"}
+                        className="block p-2 hover:bg-gray-400/20 px-8 rounded-full"
+                    >
                         Contato
                     </Link>
                 </div>

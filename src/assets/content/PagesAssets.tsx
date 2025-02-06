@@ -45,6 +45,7 @@ export const PagesAssets: Page[] = [
     },
     {
         title: "Treinamentos",
+        cta: "Veja nossos treinamentos",
         target: "/trainings",
         subpages: [
             {
