@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTransition, animated } from "@react-spring/web";
 import { Page } from "../../utils/types/Page";
 import imgWhiteLogo from "../../assets/imgs/white_logo.png";
 import { Link } from "react-router-dom";
@@ -9,15 +10,27 @@ const Header: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<Page | undefined>(undefined);
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const transitions = useTransition(currentPage, {
+        from: { transform: "translateY(-100%)", zIndex: 10 },
+        enter: { transform: "translateY(0%)", zIndex: 10 },
+        leave: { transform: "translateY(-100%)", zIndex: -1 },
+        config: { duration: 160 },
+    });
+
     return (
         <>
+            {/* buttons */}
             <div
-                className={`flex items-center justify-between relative py-6 max-w-[1280px] w-full z-50 ${
+                className={`flex items-center lg:justify-start justify-between relative py-6 max-w-[1280px] w-full z-50 ${
                     currentPage ? "text-black" : "text-white"
                 }`}
             >
                 <Link to={"/"} className="z-20">
-                    <img src={imgWhiteLogo} className={currentPage ? "filter brightness-0" : ""} alt="Logo" />
+                    <img
+                        src={imgWhiteLogo}
+                        className={currentPage ? "filter brightness-0" : ""}
+                        alt="Logo"
+                    />
                 </Link>
 
                 <button className="lg:hidden z-20" onClick={() => setMenuOpen(!menuOpen)}>
@@ -28,39 +41,46 @@ const Header: React.FC = () => {
                     )}
                 </button>
 
-                <div className="hidden lg:flex items-center ml-16 gap-8 z-20">
-                    {PagesAssets.map((page) => (
-                        <div key={page.title} onMouseEnter={() => page.subpages?.length && setCurrentPage(page)}>
+                <div className="hidden lg:flex items-center justify-start ml-16 gap-8 z-20 w-full">
+                    {PagesAssets.map((page, index) => (
+                        <div
+                            key={page.title}
+                            onMouseEnter={() => page.subpages?.length && setCurrentPage(page)}
+                            className={`${index === PagesAssets.length - 1 ? "mr-0 ml-auto" : ""}`}
+                        >
                             {!page.subpages?.length && page.target ? (
                                 <Link
                                     onClick={() => setCurrentPage(undefined)}
+                                    onMouseEnter={() => setCurrentPage(undefined)}
                                     to={page.target}
                                     className="hover:bg-gray-400/20 p-2 px-8 rounded-full"
                                 >
                                     {page.title}
                                 </Link>
                             ) : (
-                                <button type="button" className="hover:bg-gray-400/20 p-2 px-8 rounded-full">
+                                <button
+                                    type="button"
+                                    className="hover:bg-gray-400/20 p-2 px-8 rounded-full"
+                                >
                                     {page.title}
                                 </button>
                             )}
                         </div>
                     ))}
                 </div>
-
-                <div className="hidden lg:block mr-0 ml-auto z-20 ">
-                    <Link to={"/contact"} className="hover:bg-gray-400/20 p-2 px-8 rounded-full">
-                        {"Contato"}
-                    </Link>
-                </div>
             </div>
 
+            {/* mobile */}
             {menuOpen && (
                 <div className="lg:hidden absolute top-20 left-0 w-full bg-white text-black z-40 p-6 flex flex-col gap-4">
                     {PagesAssets.map((page) => (
                         <div key={page.title}>
                             {!page.subpages?.length && page.target ? (
-                                <Link onClick={() => setMenuOpen(false)} to={page.target} className="block p-2">
+                                <Link
+                                    onClick={() => setMenuOpen(false)}
+                                    to={page.target}
+                                    className="block p-2"
+                                >
                                     {page.title}
                                 </Link>
                             ) : (
@@ -82,41 +102,46 @@ const Header: React.FC = () => {
                             )}
                         </div>
                     ))}
-                    <Link
-                        onClick={() => setMenuOpen(false)}
-                        to={"/contact"}
-                        className="block p-2 hover:bg-gray-400/20 px-8 rounded-full"
-                    >
-                        Contato
-                    </Link>
                 </div>
             )}
 
-            {currentPage && (
-                <div
-                    className="absolute z-10 bg-white text-black pt-20 w-full left-0 top-0"
-                    onMouseEnter={() => setCurrentPage(currentPage)}
-                    onMouseLeave={() => setCurrentPage(undefined)}
-                >
-                    <div className="max-w-[1280px] mx-auto px-10 py-6 pb-16 flex flex-col gap-4">
-                        <p className="text-2xl">{currentPage?.cta} ⇁</p>
-                        <div className="flex flex-col gap-2">
-                            <p className="">{currentPage.title}</p>
-                            <div className="flex flex-col gap-1">
-                                {currentPage.subpages?.map((item) => (
-                                    <Link
-                                        key={item.title}
-                                        onClick={() => setCurrentPage(undefined)}
-                                        to={currentPage.target + item.target || "/"}
-                                        className="font-light hover:bg-gray-400/20 w-fit p-2 px-4 rounded-full"
-                                    >
-                                        {item.title}
-                                    </Link>
-                                ))}
+            {/* desktop */}
+            {transitions((style, item) =>
+                item ? (
+                    <animated.div
+                        style={{
+                            ...style,
+                            position: "absolute",
+                            width: "100%",
+                            top: 0,
+                            left: 0,
+                            background: "white",
+                            color: "black",
+                            paddingTop: "5rem",
+                        }}
+                        onMouseEnter={() => setCurrentPage(currentPage)}
+                        onMouseLeave={() => setCurrentPage(undefined)}
+                    >
+                        <div className="max-w-[1280px] mx-auto px-10 py-6 pb-16 flex flex-col gap-4">
+                            <p className="text-2xl">{item?.cta} ⇁</p>
+                            <div className="flex flex-col gap-2">
+                                <p>{item.title}</p>
+                                <div className="flex flex-col gap-1">
+                                    {item.subpages?.map((subpage) => (
+                                        <Link
+                                            key={subpage.title}
+                                            onClick={() => setCurrentPage(undefined)}
+                                            to={item.target + subpage.target || "/"}
+                                            className="font-light hover:bg-gray-400/20 w-fit p-2 px-4 rounded-full"
+                                        >
+                                            {subpage.title}
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </animated.div>
+                ) : null
             )}
         </>
     );

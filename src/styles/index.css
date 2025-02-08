@@ -3,6 +3,8 @@
 @theme {
     --color-primary-400: #3c3c3c;
     --color-petrol-400: #334c5d;
+
+    --color-digital: #5e8cbe;
 }
 
 @layer base {

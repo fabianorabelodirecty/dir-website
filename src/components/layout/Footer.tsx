@@ -13,10 +13,18 @@ const Footer: React.FC = () => {
                     <img src={imgWhiteLogo} className="max-w-[20svw]" />
                     <div className="flex flex-row gap-4 items-center">
                         <p>Acompanhe nas redes</p>
-                        <Link to={""} className="hover:opacity-50 transition-all">
+                        <Link
+                            to={"https://www.instagram.com/directyconsulting/"}
+                            target="_blank"
+                            className="hover:opacity-50 transition-all"
+                        >
                             <img src={imgLogoInstagram} className="size-6" />
                         </Link>
-                        <Link to={""} className="hover:opacity-50 transition-all">
+                        <Link
+                            to={"https://www.linkedin.com/company/directy/"}
+                            target="_blank"
+                            className="hover:opacity-50 transition-all"
+                        >
                             <img src={imgLogoLinkedin} className="size-6" />
                         </Link>
                     </div>
@@ -27,7 +35,7 @@ const Footer: React.FC = () => {
                         <p>contato@directy.com.br</p>
                         <p>Mubadalla Office, Rua Inácio Higino, 673 - Vila Velha, ES, Brasil</p>
                     </div>
-                    <div className="flex flex-row max-h-[80%] gap-4">
+                    <div className="flex flex-row max-h-[80%] gap-4 justify-end">
                         <img src={imgLogoIso} className="object-contain max-w-[20svw]" />
                         <img src={imgLogoProdfor} className="object-contain max-w-[20svw]" />
                     </div>

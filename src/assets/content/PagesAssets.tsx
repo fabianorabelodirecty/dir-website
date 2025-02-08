@@ -58,4 +58,19 @@ export const PagesAssets: Page[] = [
         title: "Sobre nós",
         target: "/about",
     },
+    {
+        title: "Contato",
+        cta: "Entre em contato com a Directy",
+        target: "/contacts",
+        subpages: [
+            {
+                title: "Fale com um consultor",
+                target: "/message",
+            },
+            {
+                title: "Trabalhe conosco",
+                target: "/work-with-us",
+            },
+        ],
+    },
 ];

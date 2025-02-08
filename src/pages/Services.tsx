@@ -5,6 +5,7 @@ import { CheckBadgeIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import imgDetailsL from "../assets/imgs/detail-l.png";
 import imgDetailsR from "../assets/imgs/detail-r.png";
 import ContactForm from "../components/layout/ContactForm";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Services: React.FC = () => {
     const { service } = useParams();
@@ -13,8 +14,8 @@ const Services: React.FC = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center gap-40 pb-20">
-                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
+            <div className="flex flex-col items-center gap-40 pb-20 overflow-x-hidden">
+                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 ">
                     <Breadcrumbs color={currentService?.color} />
                     <div className="flex flex-row gap-40 justify-between  h-full min-h-[60svh]">
                         <div className="lg:max-w-[50%] flex flex-col gap-6">
@@ -27,21 +28,23 @@ const Services: React.FC = () => {
                             <h1 className="text-6xl font-semibold">{currentService?.cta}</h1>
                             <p>{currentService?.contentText}</p>
                         </div>
-                        <div className="-mt-20 relative">
-                            <div className="rounded-full animate-slow-spin h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
-                                <div
-                                    className="p-2 absolute -right-2 rounded-full"
-                                    style={{ backgroundColor: currentService?.color }}
-                                />
-                            </div>
+                        <Slide direction="right">
+                            <div className="-mt-20 relative">
+                                <div className="rounded-full animate-slow-spin h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
+                                    <div
+                                        className="p-2 absolute -right-2 rounded-full"
+                                        style={{ backgroundColor: currentService?.color }}
+                                    />
+                                </div>
 
-                            <div
-                                className="rounded-full m-10 absolute top-0 right-0 aspect-square justify-center items-center flex border-[1rem]"
-                                style={{ borderColor: currentService?.color }}
-                            >
-                                <img src={currentService?.logo} className="w-3/4" />
+                                <div
+                                    className="rounded-full m-10 absolute top-0 right-0 aspect-square justify-center items-center flex border-[1rem]"
+                                    style={{ borderColor: currentService?.color }}
+                                >
+                                    <img src={currentService?.logo} className="w-3/4" />
+                                </div>
                             </div>
-                        </div>
+                        </Slide>
                     </div>
                     <div className="w-full -mb-10">
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
@@ -70,22 +73,28 @@ const Services: React.FC = () => {
                             {currentService?.title}
                         </p>
                         <div className="flex flex-col text-left gap-4 mx-auto">
-                            {currentService?.reasons?.map((item) => (
-                                <div className="flex flex-row gap-4">
-                                    <CheckBadgeIcon
-                                        className="size-6"
-                                        style={{ color: currentService?.color }}
-                                    />
-                                    <p>{item}</p>
-                                </div>
+                            {currentService?.reasons?.map((item, index) => (
+                                <Slide key={index} direction="left" delay={index * 100}>
+                                    <div className="flex flex-row gap-4">
+                                        <CheckBadgeIcon
+                                            className="size-6"
+                                            style={{ color: currentService?.color }}
+                                        />
+                                        <p>{item}</p>
+                                    </div>
+                                </Slide>
                             ))}
                         </div>
                     </div>
                 </section>
+
+                {/* Formulário de contato */}
                 <section className="w-full bg-white p-10 py-30 text-black">
-                    <div className="max-w-[1280px] mx-auto">
-                        <ContactForm color={currentService?.color} />
-                    </div>
+                    <Fade>
+                        <div className="max-w-[1280px] mx-auto">
+                            <ContactForm color={currentService?.color} />
+                        </div>
+                    </Fade>
                 </section>
             </div>
         </>

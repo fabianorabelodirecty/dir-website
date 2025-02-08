@@ -17,7 +17,10 @@ const TrainingCard: React.FC<{ training: Training }> = ({ training }) => {
                             <p className="mx-auto">{training.desc}</p>
                             <p className="font-light">{training.phrase}</p>
                         </div>
-                        <Link to={training.target} className="rounded-full px-6 py-2 border white text-white w-fit">
+                        <Link
+                            to={training.page}
+                            className="rounded-full px-6 py-2 border white text-white w-fit hover:opacity-50 transition-all"
+                        >
                             Saiba mais
                         </Link>
                     </div>

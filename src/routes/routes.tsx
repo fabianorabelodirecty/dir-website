@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import Products from "../pages/Products";
@@ -7,6 +8,12 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 
 const RouterManager = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
         <Routes>
             <Route path="/" element={<Home />} />
@@ -15,7 +22,7 @@ const RouterManager = () => {
             <Route path="/products/:product" element={<Products />} />
             <Route path="/trainings/:training" element={<Trainings />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contacts/:contact" element={<Contact />} />
         </Routes>
     );
 };
