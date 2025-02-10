@@ -19,10 +19,7 @@ const Services: React.FC = () => {
                     <Breadcrumbs color={currentService?.color} />
                     <div className="flex flex-row gap-40 justify-between  h-full min-h-[60svh]">
                         <div className="lg:max-w-[50%] flex flex-col gap-6">
-                            <p
-                                className="uppercase font-bold -mb-2"
-                                style={{ color: currentService?.color }}
-                            >
+                            <p className="uppercase font-bold -mb-2" style={{ color: currentService?.color }}>
                                 Directy {currentService?.name}
                             </p>
                             <h1 className="text-6xl font-semibold">{currentService?.cta}</h1>
@@ -76,10 +73,7 @@ const Services: React.FC = () => {
                             {currentService?.reasons?.map((item, index) => (
                                 <Slide key={index} direction="left" delay={index * 100}>
                                     <div className="flex flex-row gap-4">
-                                        <CheckBadgeIcon
-                                            className="size-6"
-                                            style={{ color: currentService?.color }}
-                                        />
+                                        <CheckBadgeIcon className="size-6" style={{ color: currentService?.color }} />
                                         <p>{item}</p>
                                     </div>
                                 </Slide>

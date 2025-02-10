@@ -1,6 +1,6 @@
 import { FormEvent, useState, useRef } from "react";
 import Requests from "../../services/api";
-import { ContactFormData, ContactFormStructure } from "../../utils/types/reqs/ContactFormData";
+import { ContactFormData } from "../../utils/types/reqs/ContactFormData";
 
 const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = ({
     title = "Que tipo de mindset você precisa?",
@@ -8,7 +8,7 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
     color = "black",
 }) => {
     const [mensagem, setMensagem] = useState<string>("");
-    const [formData, setFormData] = useState<ContactFormStructure>({
+    const [formData, setFormData] = useState<ContactFormData>({
         nome: "",
         empresa: "",
         email: "",
@@ -34,8 +34,9 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
         try {
-            const response = await Requests.sendContact(formData as ContactFormData);
+            const response = await Requests.sendContact({ ...formData, mensagem });
             console.log(response);
         } catch (error) {
             console.error("Error sending the form:", error);
@@ -56,7 +57,7 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
                                 <label className="uppercase">{key}</label>
                                 <input
                                     name={key}
-                                    value={formData[key as keyof ContactFormStructure]}
+                                    value={formData[key as keyof ContactFormData]}
                                     onChange={handleChange}
                                     required
                                     className="border-b border-gray-500 p-2 outline-none focus:border-petrol-400"
