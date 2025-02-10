@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { ArrowUpRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
-import Button from "../components/ui/Button";
 import ServiceCard from "../components/layout/ServiceCard";
 import ProductCard from "../components/layout/ProductCard";
 import imgDetailsContact from "../assets/imgs/contact-details.png";
@@ -65,7 +64,12 @@ const Home: React.FC = () => {
                                         Directy.
                                     </h2>
                                 </Fade>
-                                <Button className="mt-[2%]">Entre em contato</Button>
+                                <Link
+                                    to={"/contacts/message"}
+                                    className="bg-white hover:opacity-50 active:bg-gray-500 text-black disabled:opacity-80 disabled:bg-gray-500/20 rounded-full px-4 cursor-pointer py-2 flex w-fit items-center justify-center transition-all"
+                                >
+                                    Entre em contato
+                                </Link>
                             </div>
                         </div>
                         <div className="w-full -mb-10">
@@ -166,7 +170,7 @@ const Home: React.FC = () => {
                                 fazem a diferença, a Directy é a escolha certa.
                             </p>
                             <Link
-                                to="/contact"
+                                to="/about"
                                 className="rounded-full border border-white px-6 py-2 w-fit mt-4 flex flex-row gap-2 items-center justify-center hover:opacity-50 transition-all"
                             >
                                 Saiba mais
@@ -187,7 +191,7 @@ const Home: React.FC = () => {
                         </Fade>
                         <Slide direction="up" className="z-10">
                             <Link
-                                to="/contact"
+                                to="/contacts/message"
                                 className="rounded-full border border-white px-6 py-2 mx-auto w-fit z-10 hover:opacity-50 transition-all"
                             >
                                 Entre em contato

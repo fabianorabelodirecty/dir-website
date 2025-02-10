@@ -1,11 +1,6 @@
 import { FormEvent, useState, useRef } from "react";
-
-type ContactFormStructure = {
-    nome: string;
-    empresa: string;
-    email: string;
-    telefone: string;
-};
+import Requests from "../../services/api";
+import { ContactFormData, ContactFormStructure } from "../../utils/types/reqs/ContactFormData";
 
 const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = ({
     title = "Que tipo de mindset você precisa?",
@@ -37,8 +32,14 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
         }));
     };
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        try {
+            const response = await Requests.sendContact(formData as ContactFormData);
+            console.log(response);
+        } catch (error) {
+            console.error("Error sending the form:", error);
+        }
     };
 
     return (
