@@ -26,11 +26,7 @@ const Header: React.FC = () => {
                 }`}
             >
                 <Link to={"/"} className="z-20">
-                    <img
-                        src={imgWhiteLogo}
-                        className={currentPage ? "filter brightness-0" : ""}
-                        alt="Logo"
-                    />
+                    <img src={imgWhiteLogo} className={currentPage ? "filter brightness-0" : ""} alt="Logo" />
                 </Link>
 
                 <button className="lg:hidden z-20" onClick={() => setMenuOpen(!menuOpen)}>
@@ -58,10 +54,7 @@ const Header: React.FC = () => {
                                     {page.title}
                                 </Link>
                             ) : (
-                                <button
-                                    type="button"
-                                    className="hover:bg-gray-400/20 p-2 px-8 rounded-full"
-                                >
+                                <button type="button" className="hover:bg-gray-400/20 p-2 px-8 rounded-full">
                                     {page.title}
                                 </button>
                             )}
@@ -76,11 +69,7 @@ const Header: React.FC = () => {
                     {PagesAssets.map((page) => (
                         <div key={page.title}>
                             {!page.subpages?.length && page.target ? (
-                                <Link
-                                    onClick={() => setMenuOpen(false)}
-                                    to={page.target}
-                                    className="block p-2"
-                                >
+                                <Link onClick={() => setMenuOpen(false)} to={page.target} className="block p-2">
                                     {page.title}
                                 </Link>
                             ) : (
@@ -109,15 +98,9 @@ const Header: React.FC = () => {
             {transitions((style, item) =>
                 item ? (
                     <animated.div
+                        className={"absolute w-full top-0 left-0 bg-white text-black pt-20 shadow-lg"}
                         style={{
                             ...style,
-                            position: "absolute",
-                            width: "100%",
-                            top: 0,
-                            left: 0,
-                            background: "white",
-                            color: "black",
-                            paddingTop: "5rem",
                         }}
                         onMouseEnter={() => setCurrentPage(currentPage)}
                         onMouseLeave={() => setCurrentPage(undefined)}

@@ -1,6 +1,5 @@
 import axios from "axios";
-import { ContactFormData } from "../utils/types/reqs/ContactFormData";
-import { WorkWithUsFormData } from "../utils/types/reqs/WorkWithUsFormData";
+import { ContactReq, WorkWithUsReq } from "../utils/types/reqs/ContactFormData";
 
 // Create an axios instance
 const axiosInstance = axios.create({
@@ -11,7 +10,7 @@ const axiosInstance = axios.create({
 });
 
 class Requests {
-    static async sendContact(formData: ContactFormData) {
+    static async sendContact(formData: ContactReq) {
         try {
             const response = await axiosInstance.post("/contato", {
                 ...formData,
@@ -23,7 +22,7 @@ class Requests {
         }
     }
 
-    static async sendWorkWithUs(formData: WorkWithUsFormData) {
+    static async sendWorkWithUs(formData: WorkWithUsReq) {
         try {
             const response = await axiosInstance.post("/trabalheConosco", {
                 ...formData,

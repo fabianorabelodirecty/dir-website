@@ -3,12 +3,12 @@ export interface ContactFormData {
     empresa: string;
     email: string;
     telefone: string;
+}
+
+export interface ContactReq {
     mensagem: string;
 }
 
-export type ContactFormStructure = {
-    nome: string;
-    empresa: string;
-    email: string;
-    telefone: string;
-};
+export interface WorkWithUsReq extends ContactFormData {
+    curriculo?: File;
+}

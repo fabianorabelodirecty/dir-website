@@ -9,7 +9,7 @@ const ReasonsCard: React.FC<{ reason: Benefits }> = ({ reason }) => {
 
     return (
         <animated.div
-            className={`flex flex-col gap-6 transition-all`}
+            className={`flex flex-col gap-6 transition-all cursor-default`}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
         >
@@ -20,9 +20,7 @@ const ReasonsCard: React.FC<{ reason: Benefits }> = ({ reason }) => {
             <div className="flex flex-row gap-4 justify-center items-center px-4">
                 <div className="flex-[1]">
                     <div className="border border-gray-400 border-dashed rounded-full p-2 max-w-fit mx-auto">
-                        <div className="border border-gray-400 rounded-full p-2 transition-all">
-                            {reason.icon}
-                        </div>
+                        <div className="border border-gray-400 rounded-full p-2 transition-all">{reason.icon}</div>
                     </div>
                 </div>
                 <div className="flex-[8] flex flex-col gap-2 my-4 px-4">
