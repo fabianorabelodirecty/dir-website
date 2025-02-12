@@ -1,3 +1,11 @@
+import {
+    ArrowTrendingUpIcon,
+    ArrowUturnRightIcon,
+    ChartBarIcon,
+    ChartPieIcon,
+    CircleStackIcon,
+    EyeIcon,
+} from "@heroicons/react/24/outline";
 import { Training } from "../../utils/types/Training";
 
 export const TrainingsAssets: Training[] = [
@@ -5,26 +13,56 @@ export const TrainingsAssets: Training[] = [
         page: "/bi",
         title: "Capacitações para Líderes e Equipes",
         cta: "Você está pronto para levar suas habilidades analíticas para o próximo nível?",
-        sub: "Transforme dados em oportunidades de negócio",
-        name: "Treinamento de Power BI",
-        desc: "O Power BI é uma das ferramentas mais poderosas para análise de dados, proporcionando uma visão clara e precisa das informações da sua empresa.",
-        phrase: "Por que investir em um treinamento de Power BI?",
-        target: "Profissionais que desejam aprimorar suas habilidades em análise de dados e visualização de informações.",
-        description:
-            "Com o Power BI, é possível transformar dados complexos em visualizações interativas e dashboards dinâmicos, facilitando a tomada de decisões estratégicas e informadas.",
-        benefits: [
-            "Desenvolvimento de competências em análise de dados.",
-            "Tomada de decisões mais assertivas.",
-            "Visão analítica avançada.",
-        ],
+        desc: "O Power BI é a ferramenta ideal para empresas que buscam transformar grandes volumes de dados em decisões informadas. No nosso treinamento, você aprenderá a criar dashboards interativos e relatórios dinâmicos, desenvolvendo uma visão analítica profunda para otimizar processos e estratégias. Se você deseja aprimorar a tomada de decisões com base em dados precisos e visuais, este curso é para você. Oferecemos tanto a opção presencial quanto online ao vivo, para que você possa aprender no seu ritmo e conforme sua necessidade.",
+        contentText:
+            "No nosso treinamento, você aprenderá a criar dashboards interativos e relatórios dinâmicos, desenvolvendo uma visão analítica profunda para otimizar processos e estratégias. Se você deseja aprimorar a tomada de decisões com base em dados precisos e visuais, este curso é para você. Oferecemos tanto a opção presencial quanto online ao vivo, para que você possa aprender no seu ritmo e conforme sua necessidade.",
+        pagePhrase:
+            "Desenvolva competências essenciais em análise de dados e comece a transformar os dados da sua empresa em oportunidades de negócio.",
+        pageDesc:
+            "Aprenda a criar dashboards interativos e relatórios dinâmicos, aplicando análise de dados para tomadas de decisões estratégicas.",
         modes: "Presencial ou Online Ao Vivo",
-        features: [
-            "Criação de Dashboards interativos.",
-            "Integração com múltiplas fontes de dados.",
-            "Análise Preditiva com Power BI.",
+        reasons: [
+            {
+                title: "Desenvolvimento de competências em análise de dados",
+                icon: <ChartBarIcon className="size-6" />,
+                content:
+                    "Torne-se um especialista em Power BI e ganhe uma vantagem competitiva no mercado.",
+            },
+            {
+                title: "Tomada de decisões mais assertivas",
+                icon: <ArrowUturnRightIcon className="size-6" />,
+                content:
+                    "Aprenda a interpretar dados de maneira eficaz para tomar decisões estratégicas.",
+            },
+            {
+                title: "Visão analítica avançada",
+                icon: <EyeIcon className="size-6" />,
+                content:
+                    "Desenvolva habilidades para criar visualizações poderosas que destacam padrões e tendências.",
+            },
+            {
+                title: "Criação de Dashboards interativos",
+                icon: <ChartPieIcon className="size-6" />,
+                content:
+                    "Aprenda a construir dashboards personalizados para transformar dados em insights acionáveis.",
+            },
+            {
+                title: "Integração com múltiplas fontes de dados",
+                icon: <CircleStackIcon className="size-6" />,
+                content:
+                    "Domine a integração do Power BI com fontes como Excel, SQL e Google Analytics.",
+            },
+            {
+                title: "Análise Preditiva com Power BI",
+                icon: <ArrowTrendingUpIcon className="size-6" />,
+                content:
+                    "Explore funcionalidades de análise preditiva para identificar tendências futuras.",
+            },
         ],
-        titlePage:
-            "Leve suas habilidades analíticas para o próximo nível com o treinamento de Power BI",
+        contactTitle: "Invista no seu time e na transformação digital da sua empresa!",
+        contactSub:
+            "Transforme dados em oportunidades de negócio. Entre em contato agora para saber mais sobre o próximo curso de Power BI.",
+        titlePage: "Treinamento em Business Intelligence (BI)",
         ctaPage: "Entre em contato agora para saber mais sobre o próximo curso de Power BI",
     },
 ];

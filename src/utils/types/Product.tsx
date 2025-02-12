@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-export interface Benefits {
-    title: string;
-    icon: ReactNode;
-    content: string;
-}
+import { Benefits } from "./_Benefits";
 
 export interface Product {
     name: string;

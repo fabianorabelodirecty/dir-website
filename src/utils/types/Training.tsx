@@ -1,16 +1,17 @@
+import { Benefits } from "./_Benefits";
+
 export interface Training {
     page: string;
     title: string;
     cta: string;
-    sub: string;
-    name: string;
     desc: string;
-    phrase: string;
-    target: string;
-    description: string;
-    benefits: string[];
+    contentText: string;
+    pagePhrase: string;
+    pageDesc: string;
     modes: string;
-    features: string[];
+    reasons: Benefits[];
+    contactTitle: string;
+    contactSub: string;
     titlePage: string;
     ctaPage: string;
 }

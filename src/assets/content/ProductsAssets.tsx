@@ -28,31 +28,19 @@ export const ProductsAssets: Product[] = [
                 title: "Gestão eficiente de ações sociais",
                 content:
                     "Facilite a organização e monitoramento de múltiplas campanhas de voluntariado com ferramentas de gestão intuitivas.",
-                icon: (
-                    <>
-                        <CursorArrowRaysIcon className="size-6" />
-                    </>
-                ),
+                icon: <CursorArrowRaysIcon className="size-6" />,
             },
             {
                 title: "Apoio à doação de recursos",
                 content:
                     "Permita que sua empresa ou seus colaboradores contribuam com doações para as causas apoiadas, com a facilidade de pagamento via cartão de crédito ou PIX.",
-                icon: (
-                    <>
-                        <ArchiveBoxIcon className="size-6" />
-                    </>
-                ),
+                icon: <ArchiveBoxIcon className="size-6" />,
             },
             {
                 title: "Comitês de voluntários personalizados",
                 content:
                     "Crie e administre comitês de voluntariado por região, otimizando a coordenação e o engajamento local.",
-                icon: (
-                    <>
-                        <BuildingOffice2Icon className="size-6" />
-                    </>
-                ),
+                icon: <BuildingOffice2Icon className="size-6" />,
             },
         ],
         picture: volunteerHero,
