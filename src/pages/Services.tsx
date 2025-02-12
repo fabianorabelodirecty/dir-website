@@ -26,7 +26,7 @@ const Services: React.FC = () => {
                             <p>{currentService?.contentText}</p>
                         </div>
                         <Slide direction="right">
-                            <div className="lg:-mt-20 relative">
+                            <div className="lg:-mt-20 mt-10 relative">
                                 <div className="rounded-full animate-slow-spin lg:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
                                     <div
                                         className="p-2 absolute -right-2 rounded-full"

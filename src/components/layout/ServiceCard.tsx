@@ -20,13 +20,21 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
                 {isHovering && (
                     <Link
                         to={"/services" + service.page}
-                        className="text-sm mt-4 bg-white/20 opacity-0 transition-all
+                        className="hidden lg:flex text-sm mt-4 bg-white/20 opacity-0 transition-all
                         group-hover:opacity-100 w-fit rounded-full px-6 py-2 text-white
                         hover:opacity-50"
                     >
                         Saiba mais
                     </Link>
                 )}
+                <Link
+                    to={"/services" + service.page}
+                    className="flex lg:hidden text-sm mt-4 bg-white/20 opacity-0 transition-all
+                        group-hover:opacity-100 w-fit rounded-full px-6 py-2 text-white
+                        hover:opacity-50"
+                >
+                    Saiba mais
+                </Link>
             </div>
             <img
                 src={service.imgDetails}
