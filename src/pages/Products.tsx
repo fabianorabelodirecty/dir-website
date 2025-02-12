@@ -17,7 +17,7 @@ const Products: React.FC = () => {
             <div className="flex flex-col items-center gap-40 pb-20   overflow-x-hidden">
                 <section className="max-w-[1280px] flex px-4 md:px-0 items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
                     <Breadcrumbs />
-                    <div className="flex flex-col md:flex-row gap-40 justify-between  h-full min-h-[60svh]">
+                    <div className="flex flex-col md:flex-row md:gap-40 md:justify-between h-full min-h-[60svh] relative max-w-svw">
                         <div className="md:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
                             <h1 className="text-5xl md:text-6xl font-bold">{currentProduct?.name}</h1>
                             <div className="flex flex-row gap-10">
@@ -29,10 +29,13 @@ const Products: React.FC = () => {
                             </div>
                         </div>
                         <Slide direction="right" className="max-w-[90%] mx-auto w-full">
-                            <div className="-mt-20">
-                                <div className="rounded-full md:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
-                                    <div className="rounded-full relative aspect-square bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
-                                        <img className="size-full object-cover" src={currentProduct?.picture} />
+                            <div className="md:-mt-20 mt-10 relative flex items-center justify-center ">
+                                <div className="rounded-full md:h-[60svh] mx-auto 2xl:max-w-full relative aspect-square size-[90svw] items-center flex border border-gray-500/40 p-10">
+                                    <div className="rounded-full relative bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
+                                        <img
+                                            className="size-full object-cover aspect-square"
+                                            src={currentProduct?.picture}
+                                        />
                                         <img
                                             src={currentProduct?.auxPic}
                                             className="w-2/5 rounded-lg absolute left-[65%] top-[30%]"
@@ -43,6 +46,7 @@ const Products: React.FC = () => {
                             </div>
                         </Slide>
                     </div>
+
                     <div className="w-full -mb-10">
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
                     </div>
