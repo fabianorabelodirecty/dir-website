@@ -5,10 +5,20 @@ import ContactForm from "../components/layout/ContactForm";
 import { Fade } from "react-awesome-reveal";
 import { TrainingsAssets } from "../assets/content/TrainingsAssets";
 import ReasonsCard from "../components/layout/ReasonsCard";
+import { useTransition, animated } from "@react-spring/web";
 
 const Trainings: React.FC = () => {
     const { training } = useParams();
     const currentTraining = TrainingsAssets.find((item) => item.page.split("/")[1] === training);
+
+    // const [showItems, setShowItems] = useState<boolean>(true);
+    const transitions = useTransition(currentTraining?.reasons || [], {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        config: { duration: 1600 },
+        trail: 400,
+    });
 
     return (
         <>
@@ -32,18 +42,23 @@ const Trainings: React.FC = () => {
                             Por que investir em um treinamento de Power BI?
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-6">
-                            {currentTraining?.reasons.map((reason, index) => (
-                                <div key={index} className="flex flex-row gap-4">
+                            {transitions((style, item) => (
+                                <animated.div
+                                    style={style} // Aplica a animação no item
+                                    key={item.title} // Pode usar a chave do item, como `reason.title`
+                                    className="flex flex-row gap-4"
+                                >
                                     <div className="flex items-center justify-center border border-petrol-400 aspect-square rounded-full size-10">
-                                        {index + 1}
+                                        {(currentTraining?.reasons?.findIndex((i) => i === item) ||
+                                            0) + 1}
                                     </div>
                                     <div>
-                                        <p className="text-sm font-semibold">{reason.title}</p>
+                                        <p className="text-sm font-semibold">{item.title}</p>
                                         <p className="text-sm leading-relaxed opacity-80 font-light">
-                                            {reason.content}
+                                            {item.content}
                                         </p>
                                     </div>
-                                </div>
+                                </animated.div>
                             ))}
                         </div>
                     </div>

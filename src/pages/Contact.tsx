@@ -61,12 +61,11 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 pt-[4.5%]">
             <div className="md:w-1/2 flex flex-col justify-center">{getText(location)}</div>
             <div className="md:w-1/2 bg-white/90 p-6 rounded-lg shadow-lg text-black mb-10">
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {Object.keys(formData).map((key) => {
-                        console.log(formData);
                         return (
                             <div className="flex flex-col" key={key}>
                                 <label className="uppercase text-sm font-semibold">{key}</label>
