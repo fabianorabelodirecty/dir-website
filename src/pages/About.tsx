@@ -8,9 +8,10 @@ import {
 } from "@heroicons/react/24/outline";
 import React, { ReactNode } from "react";
 import imgLighthouse from "../assets/imgs/lighthouse.png";
-import { Fade, Slide } from "react-awesome-reveal";
+import Reveal, { Fade, Slide } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import imgDetailsContact from "../assets/imgs/contact-details.png";
+import { fadeFromLeft } from "../styles/animations";
 
 const About: React.FC = () => {
     return (
@@ -86,7 +87,12 @@ const About: React.FC = () => {
                 <p className="mb-8 text-center opacity-80 text-sm">Conheça um pouco da trajetória da Directy</p>
                 <div className="relative">
                     {/* Timeline Horizontal (Desktop) */}
-                    <div className="hidden md:flex items-center justify-center py-6">
+                    <Reveal
+                        keyframes={fadeFromLeft}
+                        duration={1000}
+                        triggerOnce
+                        className="hidden md:flex items-center justify-center py-6"
+                    >
                         <div className="relative w-full">
                             <div className="absolute inset-0 border-t-2 border-gray-400 top-3" />
                             {timeline.map((item, index) => {
@@ -119,7 +125,7 @@ const About: React.FC = () => {
                                 );
                             })}
                         </div>
-                    </div>
+                    </Reveal>
 
                     {/* Timeline Vertical (Mobile) */}
                     <div className="md:hidden space-y-8">

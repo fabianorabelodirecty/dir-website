@@ -11,7 +11,6 @@ const Trainings: React.FC = () => {
     const { training } = useParams();
     const currentTraining = TrainingsAssets.find((item) => item.page.split("/")[1] === training);
 
-    // const [showItems, setShowItems] = useState<boolean>(true);
     const transitions = useTransition(currentTraining?.reasons || [], {
         from: { opacity: 0 },
         enter: { opacity: 1 },
