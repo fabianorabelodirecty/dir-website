@@ -1,9 +1,12 @@
 import axios from "axios";
 import { ContactReq, WorkWithUsReq } from "../utils/types/reqs/ContactFormData";
+import { showToast } from "../utils/functions/toastHandler";
 
-// Create an axios instance
+// const backendLink = "http://localhost:3000";
+const backendLink = "https://newdirectyback.directy.com.br";
+
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:3000", // Replace with your backend URL
+    baseURL: backendLink,
     headers: {
         "Content-Type": "application/json",
     },
@@ -11,28 +14,25 @@ const axiosInstance = axios.create({
 
 class Requests {
     static async sendContact(formData: ContactReq) {
-        try {
-            const response = await axiosInstance.post("/contato", {
-                ...formData,
-            });
-            return response.data;
-        } catch (error) {
-            console.log(error);
-            throw new Error("Error sending contact form.");
-        }
+        return showToast(axiosInstance.post("/contato", { ...formData }), {
+            pending: "Enviando mensagem...",
+            success: "Mensagem enviada com sucesso!",
+            error: "Erro ao enviar mensagem.",
+        }).then((response) => response.data);
     }
 
     static async sendWorkWithUs(formData: WorkWithUsReq) {
-        try {
-            const response = await axiosInstance.post("/trabalheConosco", {
+        return showToast(
+            axiosInstance.post("/trabalheConosco", {
                 ...formData,
                 curriculo: formData.curriculo,
-            });
-            return response.data;
-        } catch (error) {
-            console.log(error);
-            throw new Error("Error sending work with us form.");
-        }
+            }),
+            {
+                pending: "Enviando candidatura...",
+                success: "Candidatura enviada com sucesso!",
+                error: "Erro ao enviar candidatura.",
+            }
+        ).then((response) => response.data);
     }
 }
 

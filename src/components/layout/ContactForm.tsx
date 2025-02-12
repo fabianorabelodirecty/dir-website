@@ -7,6 +7,8 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
     sub = "Fale com um consultor e esteja em dia com as mais avançadas tecnologias disponíveis no mercado!",
     color = "black",
 }) => {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
     const [mensagem, setMensagem] = useState<string>("");
     const [formData, setFormData] = useState<ContactFormData>({
         nome: "",
@@ -32,14 +34,23 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
         }));
     };
 
+    const clearFields = () => {
+        setFormData({ nome: "", empresa: "", email: "", telefone: "" });
+        setMensagem("");
+    };
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
+        setIsLoading(true);
         try {
             const response = await Requests.sendContact({ ...formData, mensagem });
+            clearFields();
             console.log(response);
         } catch (error) {
             console.error("Error sending the form:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -84,7 +95,8 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
                     </div>
                 </div>
                 <button
-                    className="rounded-full px-6 py-2 aspect-square text-white hover:opacity-50 transition-all my-auto"
+                    disabled={isLoading}
+                    className="rounded-full px-6 py-2 aspect-square text-white hover:opacity-50 transition-all my-auto disabled:opacity-10"
                     style={{ backgroundColor: color }}
                 >
                     Enviar

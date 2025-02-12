@@ -24,20 +24,18 @@ const Slider = <T,>({ items, renderItem }: SliderProps<T>) => {
 
     return (
         <div className="relative w-full flex flex-col items-center">
-            {/* Botões de navegação */}
-
             <Flicking
                 ref={flickingRef}
-                circular
-                infinite
-                infiniteThreshold={0}
+                className="w-full"
                 panelsPerView={3.5}
                 align="center"
                 moveType="snap"
                 horizontal
                 deceleration={0.007}
                 plugins={plugins}
-                className="w-full"
+                circular
+                infinite={"circular"}
+                // infiniteThreshold={0}
             >
                 {[...items, ...items].map((item, index) => (
                     <div
@@ -49,6 +47,7 @@ const Slider = <T,>({ items, renderItem }: SliderProps<T>) => {
                 ))}
             </Flicking>
 
+            {/* Botões de navegação */}
             <div className="flex flex-row gap-10 mt-6">
                 <button
                     onClick={goToPrev}
@@ -64,18 +63,6 @@ const Slider = <T,>({ items, renderItem }: SliderProps<T>) => {
                     <ChevronRightIcon className="w-6 h-6" />
                 </button>
             </div>
-
-            {/* Indicadores */}
-            {/* <div className="flex mt-4 space-x-2">
-                {items.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full transition-all ${
-                            index === currentIndex ? "bg-gray-800 scale-110" : "bg-gray-400"
-                        }`}
-                    />
-                ))}
-            </div> */}
         </div>
     );
 };

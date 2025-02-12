@@ -3,11 +3,15 @@ import { useLocation } from "react-router-dom";
 import Requests from "../services/api";
 import { PaperClipIcon } from "@heroicons/react/20/solid";
 import { ContactFormData } from "../utils/types/reqs/ContactFormData";
+import { DocumentIcon } from "@heroicons/react/24/outline";
+import { XCircleIcon } from "@heroicons/react/24/solid";
 
 type ContactLocations = "message" | "work-with-us";
 
 const Contact: React.FC = () => {
     const location: ContactLocations = useLocation()?.pathname?.split("/").slice(-1)[0] as ContactLocations;
+
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const [mensagem, setMensagem] = useState<string>("");
     const [curriculo, setCurriculo] = useState<File | undefined>(undefined);
@@ -43,8 +47,16 @@ const Contact: React.FC = () => {
         }
     };
 
+    const clearFields = () => {
+        setFormData({ nome: "", empresa: "", email: "", telefone: "" });
+        setMensagem("");
+        setCurriculo(undefined);
+    };
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
+        setIsLoading(true);
         try {
             let response;
             if (location === "message") {
@@ -52,9 +64,12 @@ const Contact: React.FC = () => {
             } else if (location === "work-with-us") {
                 response = await Requests.sendWorkWithUs({ ...formData, curriculo });
             }
+            clearFields();
             console.log(response);
         } catch (error) {
             console.error("Error sending the form:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -67,33 +82,15 @@ const Contact: React.FC = () => {
                         return (
                             <div className="flex flex-col" key={key}>
                                 <label className="uppercase text-sm font-semibold">{key}</label>
-                                {key !== "curriculo" ? (
-                                    <input
-                                        type={key === "email" ? "email" : "text"}
-                                        name={key}
-                                        value={(formData as ContactFormData)[key as keyof ContactFormData]}
-                                        onChange={handleChange}
-                                        required
-                                        className="border-b border-gray-400 p-2 outline-none focus:border-digital"
-                                    />
-                                ) : (
-                                    <div className="flex items-center space-x-3">
-                                        <label
-                                            htmlFor="curriculo"
-                                            className="cursor-pointer py-2 px-4 rounded-md bg-digital text-white flex items-center hover:opacity-50 transition-all"
-                                        >
-                                            <PaperClipIcon className="h-5 w-5 mr-2" />
-                                            Anexar Currículo
-                                        </label>
-                                        <input
-                                            id="curriculo"
-                                            type="file"
-                                            name="curriculo"
-                                            onChange={handleFileChange}
-                                            className="hidden"
-                                        />
-                                    </div>
-                                )}
+
+                                <input
+                                    type={key === "email" ? "email" : "text"}
+                                    name={key}
+                                    value={(formData as ContactFormData)[key as keyof ContactFormData]}
+                                    onChange={handleChange}
+                                    required
+                                    className="border-b border-gray-400 p-2 outline-none focus:border-digital"
+                                />
                             </div>
                         );
                     })}
@@ -117,27 +114,44 @@ const Contact: React.FC = () => {
                     ) : (
                         <div className="flex flex-col" key={"Curriculo"}>
                             <label className="uppercase text-sm font-semibold">{"Curriculo"}</label>
-                            <div className="flex items-center space-x-3">
-                                <label
-                                    htmlFor="curriculo"
-                                    className="cursor-pointer py-2 px-4 rounded-md bg-digital text-white flex items-center hover:opacity-50 transition-all"
-                                >
-                                    <PaperClipIcon className="h-5 w-5 mr-2" />
-                                    Anexar Currículo
-                                </label>
-                                <input
-                                    id="curriculo"
-                                    type="file"
-                                    name="curriculo"
-                                    onChange={handleFileChange}
-                                    className="hidden"
-                                />
+                            <div className="flex flex-row gap-2 justify-between">
+                                <div className="flex items-center space-x-3 max-w-1/2">
+                                    <label
+                                        htmlFor="curriculo"
+                                        className="cursor-pointer py-2 px-4 rounded-md bg-digital text-white flex items-center hover:opacity-50 transition-all"
+                                    >
+                                        <PaperClipIcon className="h-5 w-5 mr-2" />
+                                        {curriculo?.name ? "Alterar" : "Anexar"} Currículo
+                                    </label>
+                                    <input
+                                        id="curriculo"
+                                        type="file"
+                                        name="curriculo"
+                                        onChange={handleFileChange}
+                                        className="hidden"
+                                    />
+                                </div>
+                                {curriculo && (
+                                    <div className="flex items-center space-x-2 bg-gray-100 p-2 rounded-md text-black max-w-1/2">
+                                        <DocumentIcon className="h-5 w-5 text-gray-500" />
+                                        <span className="text-sm text-black truncate line-clamp-1">
+                                            {curriculo.name}
+                                        </span>
+                                        <button
+                                            onClick={() => setCurriculo(undefined)}
+                                            className="text-red-500 hover:text-red-700"
+                                        >
+                                            <XCircleIcon className="h-5 w-5" />
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     )}
                     <button
+                        disabled={isLoading}
                         type="submit"
-                        className="w-full bg-digital text-white py-2 px-6 rounded-full rounded-tl-none hover:opacity-50 mt-6 transition-all"
+                        className="w-full bg-digital text-white py-2 px-6 rounded-full rounded-tl-none hover:opacity-50 mt-6 transition-all disabled:opacity-10"
                     >
                         Enviar
                     </button>
@@ -148,7 +162,6 @@ const Contact: React.FC = () => {
 };
 
 const getText = (location: ContactLocations): ReactNode => {
-    console.log(location);
     switch (location) {
         case "message":
             return (

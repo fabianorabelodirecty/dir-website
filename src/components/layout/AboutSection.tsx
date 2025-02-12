@@ -33,10 +33,7 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
     const forceRenderKey = imageHeight;
 
     return (
-        <div
-            ref={sectionRef}
-            className="relative w-full h-[100svh] flex items-center justify-center bg-black"
-        >
+        <div ref={sectionRef} className="relative w-full h-[100svh] flex items-center justify-center bg-black">
             <motion.div style={{ width, x, y }} className="absolute top-0 left-0">
                 <img
                     ref={imgRef}
@@ -72,14 +69,7 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
             </section>
 
             <div key={forceRenderKey} className="absolute bottom-0 left-1/2 p-4 z-10">
-                <AnimatedText
-                    text="#Directeam"
-                    speed={7}
-                    color="white"
-                    size={18}
-                    opacity={0.8}
-                    delay={3}
-                />
+                <AnimatedText text="#Directeam" speed={7} color="white" size={18} opacity={0.8} delay={3} />
             </div>
         </div>
     );
