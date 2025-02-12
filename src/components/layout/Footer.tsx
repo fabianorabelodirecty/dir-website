@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                 <div className="mt-10">
                     <p className="text-xs opacity-50">
                         Copyright © 2024. Directy. Todos os direitos reservados.{" "}
-                        <span className="opacity-50 text-xs">{version}</span>
+                        <span className="text-gray-500 text-xs">{version}v</span>
                     </p>
                 </div>
             </div>
