@@ -33,7 +33,7 @@ const Products: React.FC = () => {
                         <Slide direction="right" className="max-w-[90%] mx-auto w-full">
                             <div className="md:-mt-20 mt-10 relative flex items-center justify-center ">
                                 <div className="rounded-full md:h-[60svh] mx-auto 2xl:max-w-full relative aspect-square  items-center flex border border-gray-500/40 p-10">
-                                    <div className="rounded-full relative bg-petrol-400 size-full justify-center items-center flex border-[1rem] overflow-hidden">
+                                    <div className="rounded-full relative bg-petrol-400 size-full aspect-square max-w-[60svw] max-h-[60svw] mx-auto justify-center items-center flex border-[1rem] overflow-hidden">
                                         <img
                                             className="size-full object-cover aspect-square"
                                             src={currentProduct?.picture}
