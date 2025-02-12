@@ -5,8 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react(), tailwindcss()],
+    base: "/",
     server: {
-        host: "0.0.0.0", // Faz o servidor escutar em todos os endereços IP
+        host: "0.0.0.0",
         port: 6730,
         cors: {
             origin: "*",
