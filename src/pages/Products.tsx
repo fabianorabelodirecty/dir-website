@@ -31,10 +31,7 @@ const Products: React.FC = () => {
                             <div className="-mt-20">
                                 <div className="rounded-full h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
                                     <div className="rounded-full relative aspect-square bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
-                                        <img
-                                            className="size-full object-cover"
-                                            src={currentProduct?.picture}
-                                        />
+                                        <img className="size-full object-cover" src={currentProduct?.picture} />
                                         <img
                                             src={currentProduct?.auxPic}
                                             className="w-2/5 rounded-lg absolute left-[65%] top-[30%]"
@@ -55,18 +52,14 @@ const Products: React.FC = () => {
                             <p className="uppercase font-bold text-sm">Benefícios</p>
                         </Fade>
                         <Slide direction="right">
-                            <p className="lg:max-w-[60%] font-bold text-4xl">
-                                {currentProduct?.pagePhrase}
-                            </p>
+                            <p className="lg:max-w-[60%] font-bold text-4xl">{currentProduct?.pagePhrase}</p>
                         </Slide>
                         <Slide direction="left">
-                            <p className="lg:max-w-[50%] text-sm mr-0 ml-auto">
-                                {currentProduct?.pageDesc}
-                            </p>
+                            <p className="lg:max-w-[50%] text-sm mr-0 ml-auto">{currentProduct?.pageDesc}</p>
                         </Slide>
                     </div>
                     <Slide direction="up">
-                        <div className="w-full lg:h-96">
+                        <div className="w-full">
                             {currentProduct?.reasons?.map((item, i) => {
                                 if (i === 0) return <ReasonsCard reason={item} />;
                                 return (
@@ -81,10 +74,7 @@ const Products: React.FC = () => {
                 <section className="w-full bg-white p-10 py-30 text-black">
                     <Fade>
                         <div className="max-w-[1280px] mx-auto">
-                            <ContactForm
-                                title={currentProduct?.contactTitle}
-                                sub={currentProduct?.contactSub}
-                            />
+                            <ContactForm title={currentProduct?.contactTitle} sub={currentProduct?.contactSub} />
                         </div>
                     </Fade>
                 </section>

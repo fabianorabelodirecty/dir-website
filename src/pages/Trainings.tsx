@@ -24,7 +24,7 @@ const Trainings: React.FC = () => {
         <>
             <div className="flex flex-col items-center gap-32 pb-20">
                 <section className="max-w-[1280px] flex flex-col w-full gap-10 pt-6 xl:pt-10 2xl:pt-20">
-                    <Breadcrumbs />
+                    <Breadcrumbs color={currentTraining?.color} />
                     <div className="flex flex-row gap-40 justify-between h-full min-h-[60svh]">
                         <div className="lg:max-w-[80%] flex flex-col gap-6">
                             <h1 className="text-6xl font-bold">{currentTraining?.cta}</h1>
@@ -43,20 +43,16 @@ const Trainings: React.FC = () => {
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-6">
                             {transitions((style, item) => (
-                                <animated.div
-                                    style={style} // Aplica a animação no item
-                                    key={item.title} // Pode usar a chave do item, como `reason.title`
-                                    className="flex flex-row gap-4"
-                                >
-                                    <div className="flex items-center justify-center border border-petrol-400 aspect-square rounded-full size-10">
-                                        {(currentTraining?.reasons?.findIndex((i) => i === item) ||
-                                            0) + 1}
+                                <animated.div style={style} key={item.title} className="flex flex-row gap-4">
+                                    <div
+                                        className="flex items-center justify-center border border-petrol-400 aspect-square rounded-full size-10"
+                                        style={{ borderColor: currentTraining?.color }}
+                                    >
+                                        {(currentTraining?.reasons?.findIndex((i) => i === item) || 0) + 1}
                                     </div>
                                     <div>
                                         <p className="text-sm font-semibold">{item.title}</p>
-                                        <p className="text-sm leading-relaxed opacity-80 font-light">
-                                            {item.content}
-                                        </p>
+                                        <p className="text-sm leading-relaxed opacity-80 font-light">{item.content}</p>
                                     </div>
                                 </animated.div>
                             ))}
@@ -73,16 +69,14 @@ const Trainings: React.FC = () => {
 
                 <section className="w-full max-w-[1280px] flex flex-col gap-16">
                     <div className="flex flex-col gap-4">
-                        <p className="font-bold text-2xl text-center mb-8">
-                            {currentTraining?.titlePage}
-                        </p>
+                        <p className="font-bold text-2xl text-center mb-8">{currentTraining?.titlePage}</p>
                         <Fade>
                             <div className="w-full">
                                 {currentTraining?.reasons?.map((item, i) => {
-                                    if (i === 0) return <ReasonsCard reason={item} />;
+                                    if (i === 0) return <ReasonsCard reason={item} color={currentTraining?.color} />;
                                     return (
                                         <div className={"-mt-1"}>
-                                            <ReasonsCard reason={item} />
+                                            <ReasonsCard reason={item} color={currentTraining?.color} />
                                         </div>
                                     );
                                 })}
@@ -94,10 +88,7 @@ const Trainings: React.FC = () => {
                 <section className="w-full bg-white p-10 py-30 pt-24 text-black">
                     <Fade>
                         <div className="max-w-[1280px] mx-auto flex flex-col gap-14">
-                            <ContactForm
-                                title={currentTraining?.contactTitle}
-                                sub={currentTraining?.contactSub}
-                            />
+                            <ContactForm title={currentTraining?.contactTitle} sub={currentTraining?.contactSub} />
                         </div>
                     </Fade>
                 </section>

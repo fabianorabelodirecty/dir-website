@@ -25,7 +25,6 @@ const TrainingCard: React.FC<{ training: Training }> = ({ training }) => {
                 </div>
 
                 <div className="w-[40svw] bg-gray-500 rounded-lg p-4">
-                    {/* Aqui você pode adicionar a imagem do curso */}
                     <img src={""} alt="Imagem do treinamento" className="w-full rounded-lg" />
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import { Benefits } from "./_Benefits";
 
 export interface Training {
+    color?: string;
     page: string;
     title: string;
     cta: string;

@@ -4,7 +4,7 @@ import { animated } from "@react-spring/web";
 import { Fade } from "react-awesome-reveal";
 import { Benefits } from "../../utils/types/_Benefits";
 
-const ReasonsCard: React.FC<{ reason: Benefits }> = ({ reason }) => {
+const ReasonsCard: React.FC<{ reason: Benefits; color?: string }> = ({ reason, color }) => {
     const [isHovering, setIsHovering] = useState<boolean>(false);
 
     return (
@@ -20,9 +20,7 @@ const ReasonsCard: React.FC<{ reason: Benefits }> = ({ reason }) => {
             <div className="flex flex-row gap-4 justify-center items-center px-4">
                 <div className="flex-[1]">
                     <div className="border border-gray-400 border-dashed rounded-full p-2 max-w-fit mx-auto">
-                        <div className="border border-gray-400 rounded-full p-2 transition-all">
-                            {reason.icon}
-                        </div>
+                        <div className="border border-gray-400 rounded-full p-2 transition-all">{reason.icon}</div>
                     </div>
                 </div>
                 <div className="flex-[8] flex flex-col gap-2 my-4 px-4">
@@ -34,11 +32,15 @@ const ReasonsCard: React.FC<{ reason: Benefits }> = ({ reason }) => {
                     )}
                 </div>
                 <div className="flex-[1]">
-                    <div className="flex-[1] p-2 bg-petrol-400/30 aspect-square rounded-full max-w-fit mx-auto">
+                    <div
+                        className="flex-[1] p-2 bg-petrol-400/30 aspect-square rounded-full max-w-fit mx-auto"
+                        style={{ backgroundColor: color ? `${color}4D` : undefined }}
+                    >
                         <div
                             className={`p-2 bg-petrol-400/60 rounded-full transition-all m-auto size-full flex justify-center items-center ${
                                 isHovering ? "rotate-180" : ""
                             }`}
+                            style={{ backgroundColor: color ? `${color}99` : undefined }}
                         >
                             <ChevronDownIcon className="size-6 text-white m-auto" />
                         </div>

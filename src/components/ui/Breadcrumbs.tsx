@@ -26,7 +26,7 @@ const findBreadcrumbPath = (pathname: string) => {
     return breadcrumbPath;
 };
 
-const Breadcrumbs: React.FC<{ color?: string }> = ({ color = "white" }) => {
+const Breadcrumbs: React.FC<{ color?: string }> = ({ color }) => {
     const location = useLocation();
     const breadcrumbPages = findBreadcrumbPath(location.pathname);
 
@@ -43,10 +43,10 @@ const Breadcrumbs: React.FC<{ color?: string }> = ({ color = "white" }) => {
                     <React.Fragment key={item.name}>
                         <Link
                             to={getTarget(item.target)}
-                            className={`hover:-translate-y-0.5 transition-all ${
-                                isCurrentPage ? "font-bold" : ""
+                            className={`hover:-translate-y-0.5 transition-all  ${
+                                isCurrentPage ? "font-bold text-petrol-400" : ""
                             }`}
-                            style={{ color: isCurrentPage ? color : "" }}
+                            style={{ color: isCurrentPage ? color : undefined }}
                         >
                             {item.name}
                         </Link>

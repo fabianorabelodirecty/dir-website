@@ -10,6 +10,7 @@ import { Training } from "../../utils/types/Training";
 
 export const TrainingsAssets: Training[] = [
     {
+        color: "#DEA011", // #F0C636 // #F8DD6A
         page: "/bi",
         title: "Capacitações para Líderes e Equipes",
         cta: "Você está pronto para levar suas habilidades analíticas para o próximo nível?",
@@ -25,38 +26,32 @@ export const TrainingsAssets: Training[] = [
             {
                 title: "Desenvolvimento de competências em análise de dados",
                 icon: <ChartBarIcon className="size-6" />,
-                content:
-                    "Torne-se um especialista em Power BI e ganhe uma vantagem competitiva no mercado.",
+                content: "Torne-se um especialista em Power BI e ganhe uma vantagem competitiva no mercado.",
             },
             {
                 title: "Tomada de decisões mais assertivas",
                 icon: <ArrowUturnRightIcon className="size-6" />,
-                content:
-                    "Aprenda a interpretar dados de maneira eficaz para tomar decisões estratégicas.",
+                content: "Aprenda a interpretar dados de maneira eficaz para tomar decisões estratégicas.",
             },
             {
                 title: "Visão analítica avançada",
                 icon: <EyeIcon className="size-6" />,
-                content:
-                    "Desenvolva habilidades para criar visualizações poderosas que destacam padrões e tendências.",
+                content: "Desenvolva habilidades para criar visualizações poderosas que destacam padrões e tendências.",
             },
             {
                 title: "Criação de Dashboards interativos",
                 icon: <ChartPieIcon className="size-6" />,
-                content:
-                    "Aprenda a construir dashboards personalizados para transformar dados em insights acionáveis.",
+                content: "Aprenda a construir dashboards personalizados para transformar dados em insights acionáveis.",
             },
             {
                 title: "Integração com múltiplas fontes de dados",
                 icon: <CircleStackIcon className="size-6" />,
-                content:
-                    "Domine a integração do Power BI com fontes como Excel, SQL e Google Analytics.",
+                content: "Domine a integração do Power BI com fontes como Excel, SQL e Google Analytics.",
             },
             {
                 title: "Análise Preditiva com Power BI",
                 icon: <ArrowTrendingUpIcon className="size-6" />,
-                content:
-                    "Explore funcionalidades de análise preditiva para identificar tendências futuras.",
+                content: "Explore funcionalidades de análise preditiva para identificar tendências futuras.",
             },
         ],
         contactTitle: "Invista no seu time e na transformação digital da sua empresa!",
