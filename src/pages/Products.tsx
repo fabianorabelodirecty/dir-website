@@ -19,7 +19,9 @@ const Products: React.FC = () => {
                     <Breadcrumbs />
                     <div className="flex flex-col md:flex-row md:gap-40 md:justify-between h-full min-h-[60svh] relative max-w-svw">
                         <div className="md:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
-                            <h1 className="text-5xl md:text-6xl font-bold">{currentProduct?.name}</h1>
+                            <h1 className="text-5xl md:text-6xl font-bold">
+                                {currentProduct?.name}
+                            </h1>
                             <div className="flex flex-row gap-10">
                                 <div className="flex flex-col justify-center items-center p-1">
                                     <div className="flex-[1] w-1 bg-white h-10 absolute mt-1/2"></div>
@@ -30,8 +32,8 @@ const Products: React.FC = () => {
                         </div>
                         <Slide direction="right" className="max-w-[90%] mx-auto w-full">
                             <div className="md:-mt-20 mt-10 relative flex items-center justify-center ">
-                                <div className="rounded-full md:h-[60svh] mx-auto 2xl:max-w-full relative aspect-square size-[90svw] items-center flex border border-gray-500/40 p-10">
-                                    <div className="rounded-full relative bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
+                                <div className="rounded-full md:h-[60svh] mx-auto 2xl:max-w-full relative aspect-square  items-center flex border border-gray-500/40 p-10">
+                                    <div className="rounded-full relative bg-petrol-400 size-full justify-center items-center flex border-[1rem] overflow-hidden">
                                         <img
                                             className="size-full object-cover aspect-square"
                                             src={currentProduct?.picture}
@@ -57,10 +59,14 @@ const Products: React.FC = () => {
                             <p className="uppercase font-bold text-sm">Benefícios</p>
                         </Fade>
                         <Slide direction="right">
-                            <p className="md:max-w-[60%] font-bold text-4xl">{currentProduct?.pagePhrase}</p>
+                            <p className="md:max-w-[60%] font-bold text-4xl">
+                                {currentProduct?.pagePhrase}
+                            </p>
                         </Slide>
                         <Slide direction="left">
-                            <p className="md:max-w-[50%] text-sm mr-0 ml-auto">{currentProduct?.pageDesc}</p>
+                            <p className="md:max-w-[50%] text-sm mr-0 ml-auto">
+                                {currentProduct?.pageDesc}
+                            </p>
                         </Slide>
                     </div>
                     <Slide direction="up">
@@ -84,7 +90,10 @@ const Products: React.FC = () => {
                 <section className="w-full bg-white p-10 py-30 text-black">
                     <Fade>
                         <div className="max-w-[1280px] mx-auto">
-                            <ContactForm title={currentProduct?.contactTitle} sub={currentProduct?.contactSub} />
+                            <ContactForm
+                                title={currentProduct?.contactTitle}
+                                sub={currentProduct?.contactSub}
+                            />
                         </div>
                     </Fade>
                 </section>
