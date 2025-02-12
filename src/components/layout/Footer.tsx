@@ -4,6 +4,7 @@ import imgLogoIso from "../../assets/imgs/logo-iso.png";
 import imgLogoProdfor from "../../assets/imgs/logo-prodfor.png";
 import imgLogoInstagram from "../../assets/imgs/logo-ig.png";
 import imgLogoLinkedin from "../../assets/imgs/logo-in.png";
+import { version } from "../../config/versionControl";
 
 const Footer: React.FC = () => {
     return (
@@ -42,7 +43,8 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="mt-10">
                     <p className="text-xs opacity-50">
-                        Copyright © 2024. Directy. Todos os direitos reservados.
+                        Copyright © 2024. Directy. Todos os direitos reservados.{" "}
+                        <span className="opacity-50 text-xs">{version}</span>
                     </p>
                 </div>
             </div>
