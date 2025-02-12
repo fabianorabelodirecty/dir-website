@@ -21,19 +21,15 @@ const Header: React.FC = () => {
         <>
             {/* buttons */}
             <div
-                className={`flex items-center lg:justify-start justify-between relative py-6 max-w-[1280px] w-full z-50 px-4 lg:px-0 ${
+                className={`flex items-center md:justify-start justify-between relative py-6 max-w-[1280px] w-full z-50 px-4 md:px-0 ${
                     currentPage ? "text-black" : "text-white"
                 }`}
             >
                 <Link to={"/"} className="z-20">
-                    <img
-                        src={imgWhiteLogo}
-                        className={currentPage ? "filter brightness-0" : ""}
-                        alt="Logo"
-                    />
+                    <img src={imgWhiteLogo} className={currentPage ? "filter brightness-0" : ""} alt="Logo" />
                 </Link>
 
-                <button className="lg:hidden z-20" onClick={() => setMenuOpen(!menuOpen)}>
+                <button className="md:hidden z-20" onClick={() => setMenuOpen(!menuOpen)}>
                     {menuOpen ? (
                         <XMarkIcon className="w-8 h-8 text-white" />
                     ) : (
@@ -41,7 +37,7 @@ const Header: React.FC = () => {
                     )}
                 </button>
 
-                <div className="hidden lg:flex items-center justify-start ml-16 gap-6 z-20 w-full">
+                <div className="hidden md:flex items-center justify-start ml-16 gap-6 z-20 w-full">
                     {PagesAssets.map((page, index) => (
                         <div
                             key={page.title}
@@ -58,10 +54,7 @@ const Header: React.FC = () => {
                                     {page.title}
                                 </Link>
                             ) : (
-                                <button
-                                    type="button"
-                                    className="hover:bg-gray-400/20 p-2 px-6 rounded-full"
-                                >
+                                <button type="button" className="hover:bg-gray-400/20 p-2 px-6 rounded-full">
                                     {page.title}
                                 </button>
                             )}
@@ -72,15 +65,11 @@ const Header: React.FC = () => {
 
             {/* mobile */}
             {menuOpen && (
-                <div className="lg:hidden absolute top-20 left-0 w-full bg-white text-black z-40 p-6 flex flex-col gap-4">
+                <div className="md:hidden absolute top-20 left-0 w-full bg-white text-black z-40 p-6 flex flex-col gap-4">
                     {PagesAssets.map((page) => (
                         <div key={page.title}>
                             {!page.subpages?.length && page.target ? (
-                                <Link
-                                    onClick={() => setMenuOpen(false)}
-                                    to={page.target}
-                                    className="block p-2"
-                                >
+                                <Link onClick={() => setMenuOpen(false)} to={page.target} className="block p-2">
                                     {page.title}
                                 </Link>
                             ) : (
@@ -109,9 +98,7 @@ const Header: React.FC = () => {
             {transitions((style, item) =>
                 item ? (
                     <animated.div
-                        className={
-                            "absolute w-full top-0 left-0 bg-white text-black pt-20 shadow-lg"
-                        }
+                        className={"absolute w-full top-0 left-0 bg-white text-black pt-20 shadow-lg"}
                         style={{
                             ...style,
                         }}

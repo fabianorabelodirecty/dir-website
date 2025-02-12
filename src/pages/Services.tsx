@@ -15,19 +15,19 @@ const Services: React.FC = () => {
     return (
         <>
             <div className="flex flex-col items-center gap-40 pb-20 overflow-x-hidden ">
-                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 px-4 lg:px-0">
+                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 px-4 md:px-0">
                     <Breadcrumbs color={currentService?.color} />
-                    <div className="flex flex-col lg:flex-row lg:gap-40 lg:justify-between h-full min-h-[60svh] relative max-w-svw">
-                        <div className="lg:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
+                    <div className="flex flex-col md:flex-row md:gap-40 md:justify-between h-full min-h-[60svh] relative max-w-svw">
+                        <div className="md:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
                             <p className="uppercase font-bold -mb-2" style={{ color: currentService?.color }}>
                                 Directy {currentService?.name}
                             </p>
-                            <h1 className=" text-4xl lg:text-6xl font-semibold">{currentService?.cta}</h1>
+                            <h1 className=" text-4xl md:text-6xl font-semibold">{currentService?.cta}</h1>
                             <p>{currentService?.contentText}</p>
                         </div>
                         <Slide direction="right" className="max-w-[90%] mx-auto w-full">
-                            <div className="lg:-mt-20 mt-10 relative ">
-                                <div className="rounded-full animate-slow-spin lg:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
+                            <div className="md:-mt-20 mt-10 relative ">
+                                <div className="rounded-full animate-slow-spin md:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
                                     <div
                                         className="p-2 absolute -right-2 rounded-full"
                                         style={{ backgroundColor: currentService?.color }}
@@ -46,15 +46,15 @@ const Services: React.FC = () => {
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
                     </div>
                 </section>
-                <section className="bg-black w-full mx-auto relative flex flex-col items-center justify-center text-white px-4 lg:px-0">
-                    <div className="absolute right-0 top-0 w-[14%] mt-12 hidden lg:flex">
+                <section className="bg-black w-full mx-auto relative flex flex-col items-center justify-center text-white px-4 md:px-0">
+                    <div className="absolute right-0 top-0 w-[14%] mt-12 hidden md:flex">
                         <img src={imgDetailsR} className="w-full h-full object-cover" />
                         <div
                             className="absolute inset-0 opacity-50 mix-blend-color"
                             style={{ backgroundColor: currentService?.color }}
                         />
                     </div>
-                    <div className="absolute left-0 top-0 w-[14%] mt-12 hidden lg:flex">
+                    <div className="absolute left-0 top-0 w-[14%] mt-12 hidden md:flex">
                         <img src={imgDetailsL} className="w-full h-full object-cover" />
                         <div
                             className="absolute inset-0 opacity-50 mix-blend-color"

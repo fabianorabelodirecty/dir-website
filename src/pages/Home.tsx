@@ -56,11 +56,11 @@ const Home: React.FC = () => {
                 <div className="flex flex-col gap-48 w-full items-center relative z-10 overflow-x-hidden">
                     {/* Hero Section */}
                     <section id="start" className="w-full max-w-[1280px] px-4">
-                        <div className="w-full max-w-[90%] lg:max-w-[70%] h-[80svh] flex items-center justify-start">
+                        <div className="w-full max-w-[90%] md:max-w-[70%] h-[80svh] flex items-center justify-start">
                             <div className="flex flex-col items-start h-[80%] mt-[2%] gap-6">
                                 <animated.h1
                                     style={fadeIn}
-                                    className="font-bold text-4xl sm:text-4xl md:text-6xl lg:text-6xl 2xl:text-7xl uppercase"
+                                    className="font-bold text-4xl sm:text-4xl md:text-6xl md:text-6xl 2xl:text-7xl uppercase"
                                 >
                                     {text}
                                 </animated.h1>
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
                                     </h2>
                                 </div>
                             </Fade>
-                            <div className="lg:flex flex-row min-h-96 gap-4 mt-10 -ml-4 hidden">
+                            <div className="md:flex flex-row min-h-96 gap-4 mt-10 -ml-4 hidden">
                                 {services.map((service, index) => (
                                     <Slide
                                         className="w-full hover:z-10"
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
                                     </Slide>
                                 ))}
                             </div>
-                            <div className="h-fit flex lg:hidden">
+                            <div className="h-fit flex md:hidden">
                                 <Slider
                                     items={services}
                                     renderItem={(service) => (
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
                                     delay={index * 100}
                                     triggerOnce
                                 >
-                                    <div className="w-full sm:w-[48%] lg:w-fit">
+                                    <div className="w-full sm:w-[48%] md:w-fit">
                                         <ProductCard product={product} direction={index % 2 === 0 ? "right" : "left"} />
                                     </div>
                                 </Slide>
@@ -161,14 +161,14 @@ const Home: React.FC = () => {
                                 <Slide
                                     direction="left"
                                     duration={500}
-                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden lg:flex"
+                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden md:flex"
                                 >
                                     <img src={imgDetailsL} className="ml-0 mr-auto" />
                                 </Slide>
                                 <Slide
                                     direction="right"
                                     duration={500}
-                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden lg:flex"
+                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden md:flex"
                                 >
                                     <img src={imgDetailsR} className="ml-auto mr-0" />
                                 </Slide>
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
                         className="mb-28 relative w-full flex flex-col items-center gap-16 px-4 bg-black"
                     >
                         <Fade>
-                            <p className="text-center text-4xl sm:text-5xl font-bold lg:max-w-[50vw] mx-auto z-10">
+                            <p className="text-center text-4xl sm:text-5xl font-bold md:max-w-[50vw] mx-auto z-10">
                                 Vamos criar algo incrível juntos?
                             </p>
                         </Fade>

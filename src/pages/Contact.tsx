@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 pt-[4.5%] px-4 lg:px-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 pt-[4.5%] px-4 md:px-0">
             <div className="md:w-1/2 flex flex-col justify-center">{getText(location)}</div>
             <div className="md:w-1/2 bg-white/10 p-6 rounded-lg shadow-lg text-white mb-10">
                 <form onSubmit={handleSubmit} className="space-y-4">

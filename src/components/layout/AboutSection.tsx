@@ -34,7 +34,7 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
 
     return (
         <div ref={sectionRef} className="relative w-full h-[100svh] flex items-center justify-center bg-black">
-            <motion.div style={{ width, x, y }} className={`absolute top-0 left-0 hidden lg:flex`}>
+            <motion.div style={{ width, x, y }} className={`absolute top-0 left-0 hidden md:flex`}>
                 <img
                     ref={imgRef}
                     src={imgAboutWork}
@@ -49,9 +49,9 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
 
             <section
                 id="about"
-                className="w-full max-w-[1280px]   px-4 flex flex-col lg:flex-row relative z-10 mb-[12svh] -mt-96 lg:mt-auto "
+                className="w-full max-w-[1280px]   px-4 flex flex-col md:flex-row relative z-10 mb-[12svh] -mt-96 md:mt-auto "
             >
-                <Fade className="lg:w-[45%] flex mb-0 mt-auto">
+                <Fade className="md:w-[45%] flex mb-0 mt-auto">
                     <div className="flex-col gap-4">
                         <p className="font-bold text-3xl sm:text-4xl md:text-5xl">
                             SOMOS A <span className="text-petrol-400">DIRECTY</span>
