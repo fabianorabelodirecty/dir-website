@@ -151,14 +151,14 @@ const Home: React.FC = () => {
                                 <Slide
                                     direction="left"
                                     duration={500}
-                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%]"
+                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden lg:flex"
                                 >
                                     <img src={imgDetailsL} className="ml-0 mr-auto" />
                                 </Slide>
                                 <Slide
                                     direction="right"
                                     duration={500}
-                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%]"
+                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden lg:flex"
                                 >
                                     <img src={imgDetailsR} className="ml-auto mr-0" />
                                 </Slide>

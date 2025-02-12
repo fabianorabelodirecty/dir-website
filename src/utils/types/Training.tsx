@@ -15,4 +15,5 @@ export interface Training {
     contactSub: string;
     titlePage: string;
     ctaPage: string;
+    picture: string;
 }

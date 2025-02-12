@@ -1,11 +1,13 @@
 import { ToastContainer } from "react-toastify";
 import PageWrapper from "./components/layout/PageWrapper";
 import RouterManager from "./routes/routes";
+// import CursorLens from "./components/ui/Cursor";
 
 function App() {
     return (
         <>
             <div className="App">
+                {/* <CursorLens /> */}
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}

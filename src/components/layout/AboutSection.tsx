@@ -34,24 +34,24 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
 
     return (
         <div ref={sectionRef} className="relative w-full h-[100svh] flex items-center justify-center bg-black">
-            <motion.div style={{ width, x, y }} className="absolute top-0 left-0">
+            <motion.div style={{ width, x, y }} className={`absolute top-0 left-0 hidden lg:flex`}>
                 <img
                     ref={imgRef}
                     src={imgAboutWork}
-                    className="w-full filter brightness-70 absolute top-0 left-0 object-cover"
+                    className="w-full filter brightness-70 absolute top-0 left-0 object-cover aspect-[3/2]"
                 />
-                <div
+                {/* <div
                     key={forceRenderKey} // Forçando re-render aqui
                     className="absolute inset-0 opacity-50 z-10 bg-gradient-to-l from-black to-transparent"
                     style={{ height: imageHeight }}
-                />
+                /> */}
             </motion.div>
 
             <section
                 id="about"
-                className="w-full max-w-[1280px]  px-4 flex flex-col lg:flex-row relative z-10 mb-[12svh] mt-auto"
+                className="w-full max-w-[1280px]   px-4 flex flex-col lg:flex-row relative z-10 mb-[12svh] -mt-96 lg:mt-auto "
             >
-                <Fade direction="up" className="lg:w-[45%] flex mb-0 mt-auto">
+                <Fade className="lg:w-[45%] flex mb-0 mt-auto">
                     <div className="flex-col gap-4">
                         <p className="font-bold text-3xl sm:text-4xl md:text-5xl">
                             SOMOS A <span className="text-petrol-400">DIRECTY</span>

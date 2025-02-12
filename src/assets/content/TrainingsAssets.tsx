@@ -7,6 +7,7 @@ import {
     EyeIcon,
 } from "@heroicons/react/24/outline";
 import { Training } from "../../utils/types/Training";
+import imgBI from "../content/imgs/bi-cover.png";
 
 export const TrainingsAssets: Training[] = [
     {
@@ -59,5 +60,6 @@ export const TrainingsAssets: Training[] = [
             "Transforme dados em oportunidades de negócio. Entre em contato agora para saber mais sobre o próximo curso de Power BI.",
         titlePage: "Treinamento em Business Intelligence (BI)",
         ctaPage: "Entre em contato agora para saber mais sobre o próximo curso de Power BI",
+        picture: imgBI,
     },
 ];

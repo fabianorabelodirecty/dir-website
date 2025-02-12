@@ -3,13 +3,13 @@ import { Training } from "../../utils/types/Training";
 
 const TrainingCard: React.FC<{ training: Training }> = ({ training }) => {
     return (
-        <div className="flex flex-col gap-8 lg:max-w-[1280px] mx-auto mb-14">
+        <div className="flex flex-col gap-8 lg:max-w-[1280px] mx-auto mb-14 px-4">
             <div className="text-center">
                 <p className="text-5xl font-bold">{training.title}</p>
                 <p className="text-lg font-light mt-4">{training.cta}</p>
             </div>
 
-            <div className="flex flex-row gap-6">
+            <div className="flex flex-col lg:flex-row gap-6">
                 <div className="flex flex-col gap-6 lg:max-w-[60%]">
                     <h3 className="text-2xl font-semibold">{training.titlePage}</h3>
                     <p className="font-light">{training.desc}</p>
@@ -24,8 +24,12 @@ const TrainingCard: React.FC<{ training: Training }> = ({ training }) => {
                     </div>
                 </div>
 
-                <div className="w-[40svw] bg-gray-500 rounded-lg p-4">
-                    <img src={""} alt="Imagem do treinamento" className="w-full rounded-lg" />
+                <div className="w-[40svw] hidden rounded-lg p-4 aspect-[3/2] lg:flex">
+                    <img
+                        src={training.picture}
+                        alt="Imagem do treinamento"
+                        className="size-full rounded-lg filter brightness-80"
+                    />
                 </div>
             </div>
         </div>
