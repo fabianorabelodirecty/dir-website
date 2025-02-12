@@ -101,7 +101,7 @@ const Home: React.FC = () => {
                                     </h2>
                                 </div>
                             </Fade>
-                            <div className="flex flex-row min-h-96 gap-4 mt-10 -ml-4">
+                            <div className="lg:flex flex-row min-h-96 gap-4 mt-10 -ml-4 hidden">
                                 {services.map((service, index) => (
                                     <Slide
                                         className="w-full hover:z-10"
@@ -115,6 +115,16 @@ const Home: React.FC = () => {
                                         </div>
                                     </Slide>
                                 ))}
+                            </div>
+                            <div className="h-fit flex lg:hidden">
+                                <Slider
+                                    items={services}
+                                    renderItem={(service) => (
+                                        <div className="w-full">
+                                            <ServiceCard service={service} />
+                                        </div>
+                                    )}
+                                />
                             </div>
                         </div>
                     </section>

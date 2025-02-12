@@ -14,10 +14,10 @@ const Products: React.FC = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center gap-40 pb-20 overflow-x-hidden">
-                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
+            <div className="flex flex-col items-center gap-40 pb-20   overflow-x-hidden">
+                <section className="max-w-[1280px] flex px-4 lg:px-0 items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
                     <Breadcrumbs />
-                    <div className="flex flex-row gap-40 justify-between  h-full min-h-[60svh]">
+                    <div className="flex flex-col lg:flex-row gap-40 justify-between  h-full min-h-[60svh]">
                         <div className="lg:max-w-[50%] flex flex-col gap-6">
                             <h1 className="text-6xl font-bold">{currentProduct?.name}</h1>
                             <div className="flex flex-row gap-10">
@@ -30,7 +30,7 @@ const Products: React.FC = () => {
                         </div>
                         <Slide direction="right">
                             <div className="-mt-20">
-                                <div className="rounded-full h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
+                                <div className="rounded-full lg:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
                                     <div className="rounded-full relative aspect-square bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
                                         <img className="size-full object-cover" src={currentProduct?.picture} />
                                         <img
@@ -47,7 +47,7 @@ const Products: React.FC = () => {
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
                     </div>
                 </section>
-                <section className="w-full max-w-[1280px] flex flex-col gap-20">
+                <section className="w-full max-w-[1280px] px-4 lg:px-0 flex flex-col gap-20">
                     <div className="flex flex-col gap-4">
                         <Fade>
                             <p className="uppercase font-bold text-sm">Benefícios</p>

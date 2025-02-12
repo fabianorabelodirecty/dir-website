@@ -17,14 +17,14 @@ const About: React.FC = () => {
     return (
         <div className=" mx-auto flex flex-col relative z-10 overflow-x-hidden min-h-fit">
             {/* Sobre nós */}
-            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[50svh] items-center flex z-10">
+            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[50svh] items-center flex z-10  px-4 lg:px-0">
                 <h1 className="text-3xl font-bold mb-4 lg:max-w-[60%]">
                     Na Directy, nossa cultura reflete a seriedade e a dedicação que colocamos em cada projeto.
                 </h1>
             </section>
 
             {/* Nosso Compromisso */}
-            <section className="w-full relative  bg-white text-black pt-8">
+            <section className="w-full relative  bg-white text-black pt-8  px-4 lg:px-0">
                 <img
                     src={imgLighthouse}
                     draggable={false}
@@ -36,7 +36,7 @@ const About: React.FC = () => {
                         Trabalhamos lado a lado com nossos clientes para desenvolver soluções tecnológicas que superam
                         expectativas.
                     </p>
-                    <div className="grid grid-cols-3 gap-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
                         <AboutCard
                             icon={<ScaleIcon className="size-8" />}
                             title="Ética e Integridade"
@@ -57,11 +57,11 @@ const About: React.FC = () => {
             </section>
 
             {/* Nossa Cultura */}
-            <section className="w-full bg-white text-black pb-18">
+            <section className="w-full bg-white text-black pb-18  px-4 lg:px-0">
                 <div className="max-w-[1280px] mx-auto py-10">
                     <h2 className="text-2xl font-semibold mb-1">Nossa Cultura</h2>
                     <p className="mb-8 opacity-80">Compromisso com Excelência, Ética e Resultados</p>
-                    <div className="grid grid-cols-3 gap-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
                         <AboutCard
                             icon={<SparklesIcon className="size-8" />}
                             title="Tradição com Inovação"
@@ -82,7 +82,7 @@ const About: React.FC = () => {
             </section>
 
             {/* Nossa História */}
-            <section className="mb-10 min-h-96 px-[10svw] mt-20">
+            <section className="mb-20 lg:mb-10 min-h-96 px-[10svw] mt-20 ">
                 <h2 className="text-3xl font-semibold mb-1 text-center">Nossa História</h2>
                 <p className="mb-8 text-center opacity-80 text-sm">Conheça um pouco da trajetória da Directy</p>
                 <div className="relative">

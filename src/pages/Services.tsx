@@ -14,10 +14,10 @@ const Services: React.FC = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center gap-40 pb-20 overflow-x-hidden">
-                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 ">
+            <div className="flex flex-col items-center gap-40 pb-20 overflow-x-hidden ">
+                <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 px-4 lg:px-0">
                     <Breadcrumbs color={currentService?.color} />
-                    <div className="flex flex-row gap-40 justify-between  h-full min-h-[60svh]">
+                    <div className="flex flex-col lg:flex-row lg:gap-40 lg:justify-between h-full min-h-[60svh] relative">
                         <div className="lg:max-w-[50%] flex flex-col gap-6">
                             <p className="uppercase font-bold -mb-2" style={{ color: currentService?.color }}>
                                 Directy {currentService?.name}
@@ -26,8 +26,8 @@ const Services: React.FC = () => {
                             <p>{currentService?.contentText}</p>
                         </div>
                         <Slide direction="right">
-                            <div className="-mt-20 relative">
-                                <div className="rounded-full animate-slow-spin h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
+                            <div className="lg:-mt-20 relative">
+                                <div className="rounded-full animate-slow-spin lg:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
                                     <div
                                         className="p-2 absolute -right-2 rounded-full"
                                         style={{ backgroundColor: currentService?.color }}
@@ -47,15 +47,15 @@ const Services: React.FC = () => {
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
                     </div>
                 </section>
-                <section className="bg-black w-full mx-auto relative flex flex-col items-center justify-center text-white">
-                    <div className="absolute right-0 top-0 w-[14%] mt-12">
+                <section className="bg-black w-full mx-auto relative flex flex-col items-center justify-center text-white px-4 lg:px-0">
+                    <div className="absolute right-0 top-0 w-[14%] mt-12 hidden lg:flex">
                         <img src={imgDetailsR} className="w-full h-full object-cover" />
                         <div
                             className="absolute inset-0 opacity-50 mix-blend-color"
                             style={{ backgroundColor: currentService?.color }}
                         />
                     </div>
-                    <div className="absolute left-0 top-0 w-[14%] mt-12">
+                    <div className="absolute left-0 top-0 w-[14%] mt-12 hidden lg:flex">
                         <img src={imgDetailsL} className="w-full h-full object-cover" />
                         <div
                             className="absolute inset-0 opacity-50 mix-blend-color"

@@ -10,9 +10,9 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             className="group bg-primary-400 border-white/50 border 
-                        rounded-3xl overflow-hidden p-8 transition-transform duration-300
+                        rounded-3xl overflow-hidden p-8 lg:transition-transform duration-300
                         w-72
-                        hover:z-20 hover:scale-110 absolute"
+                        hover:z-20 hover:scale-110 lg:absolute relative mx-auto"
         >
             <div className="flex flex-col relative z-10">
                 <img src={service.logo} className="w-[60%] group-hover:w-[75%] mb-20 transition-all" />

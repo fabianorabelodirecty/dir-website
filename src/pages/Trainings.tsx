@@ -6,6 +6,7 @@ import { Fade } from "react-awesome-reveal";
 import { TrainingsAssets } from "../assets/content/TrainingsAssets";
 import ReasonsCard from "../components/layout/ReasonsCard";
 import { useTransition, animated } from "@react-spring/web";
+import React from "react";
 
 const Trainings: React.FC = () => {
     const { training } = useParams();
@@ -22,11 +23,11 @@ const Trainings: React.FC = () => {
     return (
         <>
             <div className="flex flex-col items-center gap-32 pb-20">
-                <section className="max-w-[1280px] flex flex-col w-full gap-10 pt-6 xl:pt-10 2xl:pt-20">
+                <section className="max-w-[1280px] flex flex-col w-full gap-10 pt-6 xl:pt-10 2xl:pt-20 px-4 lg:px-0">
                     <Breadcrumbs color={currentTraining?.color} />
                     <div className="flex flex-row gap-40 justify-between h-full min-h-[60svh]">
                         <div className="lg:max-w-[80%] flex flex-col gap-6">
-                            <h1 className="text-6xl font-bold">{currentTraining?.cta}</h1>
+                            <h1 className="text-4xl lg:text-6xl font-bold">{currentTraining?.cta}</h1>
                             <p>{currentTraining?.desc}</p>
                         </div>
                     </div>
@@ -35,7 +36,7 @@ const Trainings: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full max-w-[1280px] flex flex-col gap-16 py-8">
+                <section className="w-full max-w-[1280px] flex flex-col gap-16 py-8 px-4 lg:px-0">
                     <div className="flex flex-col gap-8">
                         <h2 className="font-bold text-4xl text-white mb-6">
                             Por que investir em um treinamento de Power BI?
@@ -59,24 +60,29 @@ const Trainings: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full max-w-[1280px] flex flex-col gap-16">
+                <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 lg:px-0">
                     <div className="flex flex-col gap-4">
                         <p className="text-xl font-semibold">{currentTraining?.modes}</p>
                         <p className="text-sm opacity-80">{currentTraining?.contentText}</p>
                     </div>
                 </section>
 
-                <section className="w-full max-w-[1280px] flex flex-col gap-16">
+                <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 lg:px-0">
                     <div className="flex flex-col gap-4">
                         <p className="font-bold text-2xl text-center mb-8">{currentTraining?.titlePage}</p>
                         <Fade>
                             <div className="w-full">
                                 {currentTraining?.reasons?.map((item, i) => {
-                                    if (i === 0) return <ReasonsCard reason={item} color={currentTraining?.color} />;
                                     return (
-                                        <div className={"-mt-1"}>
-                                            <ReasonsCard reason={item} color={currentTraining?.color} />
-                                        </div>
+                                        <React.Fragment key={item.title}>
+                                            {i === 0 ? (
+                                                <ReasonsCard reason={item} />
+                                            ) : (
+                                                <div className={"-mt-1"}>
+                                                    <ReasonsCard reason={item} />
+                                                </div>
+                                            )}
+                                        </React.Fragment>
                                     );
                                 })}
                             </div>
