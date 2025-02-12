@@ -35,8 +35,8 @@ const Slider = <T,>({ items, renderItem }: SliderProps<T>) => {
             <Flicking
                 ref={flickingRef}
                 circular
-                infinite
-                infiniteThreshold={0}
+                infinite={"circular"}
+                // infiniteThreshold={0}
                 panelsPerView={panelsPerView}
                 align="center"
                 moveType="snap"

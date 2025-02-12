@@ -17,16 +17,16 @@ const Services: React.FC = () => {
             <div className="flex flex-col items-center gap-40 pb-20 overflow-x-hidden ">
                 <section className="max-w-[1280px] flex items-start w-full flex-col gap-10 pt-6 xl:pt-10 px-4 lg:px-0">
                     <Breadcrumbs color={currentService?.color} />
-                    <div className="flex flex-col lg:flex-row lg:gap-40 lg:justify-between h-full min-h-[60svh] relative">
-                        <div className="lg:max-w-[50%] flex flex-col gap-6">
+                    <div className="flex flex-col lg:flex-row lg:gap-40 lg:justify-between h-full min-h-[60svh] relative max-w-svw">
+                        <div className="lg:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto">
                             <p className="uppercase font-bold -mb-2" style={{ color: currentService?.color }}>
                                 Directy {currentService?.name}
                             </p>
-                            <h1 className="text-6xl font-semibold">{currentService?.cta}</h1>
+                            <h1 className=" text-4xl lg:text-6xl font-semibold">{currentService?.cta}</h1>
                             <p>{currentService?.contentText}</p>
                         </div>
-                        <Slide direction="right">
-                            <div className="lg:-mt-20 mt-10 relative">
+                        <Slide direction="right" className="max-w-[90%] mx-auto">
+                            <div className="lg:-mt-20 mt-10 relative ">
                                 <div className="rounded-full animate-slow-spin lg:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
                                     <div
                                         className="p-2 absolute -right-2 rounded-full"
