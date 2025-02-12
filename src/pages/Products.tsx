@@ -30,8 +30,15 @@ const Products: React.FC = () => {
                         <Slide direction="right">
                             <div className="-mt-20">
                                 <div className="rounded-full h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
-                                    <div className="rounded-full aspect-square bg-petrol-400 size-full justify-center items-center flex border-[1rem]">
-                                        <img className="w-3/4" />
+                                    <div className="rounded-full relative aspect-square bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
+                                        <img
+                                            className="size-full object-cover"
+                                            src={currentProduct?.picture}
+                                        />
+                                        <img
+                                            src={currentProduct?.auxPic}
+                                            className="w-2/5 rounded-lg absolute left-[65%] top-[30%]"
+                                        />
                                     </div>
                                     <div className="p-2 absolute -right-2 rounded-full" />
                                 </div>

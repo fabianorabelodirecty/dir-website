@@ -74,11 +74,11 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
             <div key={forceRenderKey} className="absolute bottom-0 left-1/2 p-4 z-10">
                 <AnimatedText
                     text="#Directeam"
-                    speed={12}
+                    speed={7}
                     color="white"
                     size={18}
                     opacity={0.8}
-                    delay={2}
+                    delay={3}
                 />
             </div>
         </div>
