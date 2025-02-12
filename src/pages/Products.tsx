@@ -18,7 +18,7 @@ const Products: React.FC = () => {
                 <section className="max-w-[1280px] flex px-4 lg:px-0 items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
                     <Breadcrumbs />
                     <div className="flex flex-col lg:flex-row gap-40 justify-between  h-full min-h-[60svh]">
-                        <div className="lg:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto">
+                        <div className="lg:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
                             <h1 className="text-5xl lg:text-6xl font-bold">{currentProduct?.name}</h1>
                             <div className="flex flex-row gap-10">
                                 <div className="flex flex-col justify-center items-center p-1">
@@ -28,7 +28,7 @@ const Products: React.FC = () => {
                                 <p>{currentProduct?.contentText}</p>
                             </div>
                         </div>
-                        <Slide direction="right" className="max-w-[90%] mx-auto">
+                        <Slide direction="right" className="max-w-[90%] mx-auto w-full">
                             <div className="-mt-20">
                                 <div className="rounded-full lg:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40 p-10">
                                     <div className="rounded-full relative aspect-square bg-petrol-400 overflow-hidden size-full justify-center items-center flex border-[1rem]">
