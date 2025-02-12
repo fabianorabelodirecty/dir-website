@@ -4,6 +4,8 @@ import {
     CursorArrowRaysIcon,
 } from "@heroicons/react/24/outline";
 import { Product } from "../../utils/types/Product";
+import volunteerHero from "../../assets/content/imgs/volunteer-hero.png";
+import volunteerAction from "../../assets/content/imgs/volunteer-action.png";
 
 export const ProductsAssets: Product[] = [
     {
@@ -53,5 +55,7 @@ export const ProductsAssets: Product[] = [
                 ),
             },
         ],
+        picture: volunteerHero,
+        auxPic: volunteerAction,
     },
 ];

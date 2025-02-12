@@ -1,19 +1,25 @@
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import { ArrowUpRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import ServiceCard from "../components/layout/ServiceCard";
 import ProductCard from "../components/layout/ProductCard";
 import imgDetailsContact from "../assets/imgs/contact-details.png";
 import imgDetailsL from "../assets/imgs/detail-l.png";
 import imgDetailsR from "../assets/imgs/detail-r.png";
+import imgLighthouse from "../assets/imgs/lighthouse.png";
 import { Link, useLocation } from "react-router-dom";
 import TrainingCard from "../components/layout/TrainingCard";
-import AboutCard from "../components/layout/AboutCard";
 import { services } from "../assets/content/ServicesAssets";
 import { ProductsAssets } from "../assets/content/ProductsAssets";
 import { TrainingsAssets } from "../assets/content/TrainingsAssets";
 import { AboutsAssets } from "../assets/content/AboutsAssets";
 import { Fade, Slide } from "react-awesome-reveal";
+import AboutSection from "../components/layout/AboutSection";
+import { FeedbacksAssets } from "../assets/content/FeedbackAssets";
+import FeedbackCard from "../components/layout/FeedbackCard";
+import Slider from "../components/ui/Slider";
+
+// import ParticlesBg from "particles-bg";
 
 const Home: React.FC = () => {
     const location = useLocation();
@@ -46,6 +52,7 @@ const Home: React.FC = () => {
     return (
         <>
             <div>
+                {/* <ParticlesBg type="cobweb" color="#FFFFFF" bg={true} /> */}
                 <div className="flex flex-col gap-48 w-full items-center relative z-10 overflow-x-hidden">
                     {/* Hero Section */}
                     <section id="start" className="w-full max-w-[1280px] px-4">
@@ -78,7 +85,11 @@ const Home: React.FC = () => {
                     </section>
 
                     {/* Serviços */}
-                    <section id="services" className="bg-white w-full">
+                    <section id="services" className="bg-white w-full relative">
+                        <img
+                            src={imgLighthouse}
+                            className="absolute right-[2svw] -top-80 opacity-30 h-80 aspect-[44/20] min-w-[44rem] max-w-none"
+                        />
                         <div className="w-full max-w-[1280px] mx-auto py-20 px-4">
                             <Fade direction="up">
                                 <div className="flex flex-col items-center gap-6">
@@ -109,7 +120,7 @@ const Home: React.FC = () => {
                     </section>
 
                     {/* Produtos */}
-                    <section id="products" className="w-full max-w-[1280px] px-4 -mt-10">
+                    <section id="products" className="w-full max-w-[1280px] px-4 -mt-10 bg-black">
                         <Fade direction="up" triggerOnce>
                             <div className="flex flex-col items-center mt-10 gap-6">
                                 <h1 className="text-center font-bold text-3xl sm:text-4xl md:text-5xl uppercase">
@@ -126,7 +137,10 @@ const Home: React.FC = () => {
                                     triggerOnce
                                 >
                                     <div className="w-full sm:w-[48%] lg:w-fit">
-                                        <ProductCard product={product} />
+                                        <ProductCard
+                                            product={product}
+                                            direction={index % 2 === 0 ? "right" : "left"}
+                                        />
                                     </div>
                                 </Slide>
                             ))}
@@ -134,22 +148,22 @@ const Home: React.FC = () => {
                     </section>
 
                     {/* Treinamentos */}
-                    <section id="trainings" className="w-full relative">
+                    <section id="trainings" className="w-full relative bg-black">
                         {TrainingsAssets.map((training, index) => (
                             <div key={index}>
-                                <Slide
-                                    direction="right"
-                                    duration={500}
-                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%]"
-                                >
-                                    <img src={imgDetailsR} />
-                                </Slide>
                                 <Slide
                                     direction="left"
                                     duration={500}
                                     className="absolute left-0 w-[14%] mt-4 sm:w-[20%]"
                                 >
-                                    <img src={imgDetailsL} />
+                                    <img src={imgDetailsL} className="ml-0 mr-auto" />
+                                </Slide>
+                                <Slide
+                                    direction="right"
+                                    duration={500}
+                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%]"
+                                >
+                                    <img src={imgDetailsR} className="ml-auto mr-0" />
                                 </Slide>
                                 <div className="max-w-[1280px] mx-auto">
                                     <TrainingCard training={training} />
@@ -159,30 +173,31 @@ const Home: React.FC = () => {
                     </section>
 
                     {/* Sobre */}
-                    <section id="about" className="w-full max-w-[1280px] px-4">
-                        <Fade className="lg:w-1/2 flex flex-col gap-4">
-                            <p className="font-bold text-3xl sm:text-4xl md:text-5xl">
-                                SOMOS A <span className="text-petrol-400">DIRECTY</span>
+                    <AboutSection assets={AboutsAssets} />
+
+                    {/* Feedback */}
+                    <section
+                        id="fedbacks"
+                        className="w-full relative bg-black flex flex-col gap-10 -mt-10"
+                    >
+                        <div className="flex flex-col gap-2">
+                            <p className="text-center text-sm  font-bold mx-auto uppercase opacity-80">
+                                Testemunhos
                             </p>
-                            <AboutCard abouts={AboutsAssets} />
-                            <p className="font-light text-sm sm:text-base mt-6">
-                                Se você busca tecnologia de ponta, confiabilidade e soluções que
-                                fazem a diferença, a Directy é a escolha certa.
+                            <p className="text-center mx-auto text-5xl font-bold">
+                                O que nossos clientes dizem
                             </p>
-                            <Link
-                                to="/about"
-                                className="rounded-full border border-white px-6 py-2 w-fit mt-4 flex flex-row gap-2 items-center justify-center hover:opacity-50 transition-all"
-                            >
-                                Saiba mais
-                                <ArrowUpRightIcon className="w-5 h-5" />
-                            </Link>
-                        </Fade>
+                        </div>
+                        <Slider
+                            items={FeedbacksAssets}
+                            renderItem={(feedback) => <FeedbackCard feedback={feedback} />}
+                        />
                     </section>
 
                     {/* Contato */}
                     <section
                         id="contact"
-                        className="mb-28 relative w-full flex flex-col items-center gap-16 px-4"
+                        className="mb-28 relative w-full flex flex-col items-center gap-16 px-4 bg-black"
                     >
                         <Fade>
                             <p className="text-center text-4xl sm:text-5xl font-bold lg:max-w-[50vw] mx-auto z-10">

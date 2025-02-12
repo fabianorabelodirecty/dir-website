@@ -8,7 +8,7 @@ import imgLogoLinkedin from "../../assets/imgs/logo-in.png";
 const Footer: React.FC = () => {
     return (
         <>
-            <div className="w-full max-w-[1280px] px-4 text-center my-10 flex flex-col gap-6">
+            <div className="w-full max-w-[1280px] px-4 text-center my-10 flex flex-col gap-6 bg-black">
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
                     <img src={imgWhiteLogo} className="max-w-[20svw]" />
                     <div className="flex flex-row gap-4 items-center">

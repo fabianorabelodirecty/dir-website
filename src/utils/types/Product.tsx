@@ -18,4 +18,6 @@ export interface Product {
     pagePhrase: string;
     pageDesc: string;
     reasons: Benefits[];
+    picture: string;
+    auxPic: string;
 }

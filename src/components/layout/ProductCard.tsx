@@ -1,19 +1,35 @@
+import { Link } from "react-router-dom";
 import { Product } from "../../utils/types/Product";
-import Button from "../ui/Button";
 
-const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+const ProductCard: React.FC<{ product: Product; direction?: "right" | "left" }> = ({
+    product,
+    direction = "right",
+}) => {
     return (
         <>
-            <div className="w-full flex flex-row gap-10">
-                <div className="flex flex-col relative z-10 w-full gap-2">
+            <div
+                className={`w-full flex gap-20 ${
+                    direction === "right" ? " flex-row" : "flex-row-reverse"
+                }`}
+            >
+                <div className="flex flex-col relative z-10 w-full max-w-[60%] gap-2">
                     <p className="font-bold text-4xl">{product.name}</p>
                     <p className="font-bold text-sm uppercase">{product.cta}</p>
                     <p className="text-sm my-2">{product.desc}</p>
                     <p className="font-light text-sm">{product.phrase}</p>
-                    <Button className="text-sm mt-4">Saiba mais</Button>
+                    <Link
+                        to={"/products" + product.page}
+                        className="text-sm mt-4 px-6 py-2 border border-white w-fit rounded-full text-center hover:opacity-50"
+                    >
+                        Saiba mais
+                    </Link>
                 </div>
-                <div className="w-[40svw] bg-gray-500 rounded-lg p-1">
-                    <img src={""} className="w-full absolute -bottom-1 left-0 z-0" />
+                <div className="w-[40svw] relative">
+                    <img src={product.picture} className="w-full rounded-lg" />
+                    <img
+                        src={product.auxPic}
+                        className="w-3/10 rounded-lg absolute -right-18 bottom-6"
+                    />
                 </div>
             </div>
         </>
