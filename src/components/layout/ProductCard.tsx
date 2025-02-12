@@ -9,10 +9,10 @@ const ProductCard: React.FC<{ product: Product; direction?: "right" | "left" }> 
         <>
             <div
                 className={`w-full flex gap-20 ${
-                    direction === "right" ? " md:flex-row" : "md:flex-row-reverse"
+                    direction === "right" ? " 2xl:flex-row" : "2xl:flex-row-reverse"
                 } flex-col`}
             >
-                <div className="flex flex-col relative z-10 w-full md:max-w-[60%] gap-2">
+                <div className="flex flex-col relative z-10 w-full 2xl:max-w-[60%] gap-2">
                     <p className="font-bold text-4xl">{product.name}</p>
                     <p className="font-bold text-sm uppercase">{product.cta}</p>
                     <p className="text-sm my-2">{product.desc}</p>
@@ -24,9 +24,12 @@ const ProductCard: React.FC<{ product: Product; direction?: "right" | "left" }> 
                         Saiba mais
                     </Link>
                 </div>
-                <div className="md:w-[40svw] w-[80svw] relative">
+                <div className="2xl:w-[40svw] w-[80svw] relative">
                     <img src={product.picture} className="w-full rounded-lg" />
-                    <img src={product.auxPic} className="w-3/10 rounded-lg absolute -right-18 bottom-6" />
+                    <img
+                        src={product.auxPic}
+                        className="w-3/10 rounded-lg absolute -right-18 bottom-6"
+                    />
                 </div>
             </div>
         </>

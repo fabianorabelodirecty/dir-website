@@ -9,8 +9,8 @@ import { version } from "../../config/versionControl";
 const Footer: React.FC = () => {
     return (
         <>
-            <div className="w-full max-w-[1280px] px-4 text-center my-10 flex flex-col gap-6 bg-black pb-10 md:pb-0">
-                <div className="flex flex-col md:flex-row justify-between gap-4">
+            <div className="w-full max-w-[1280px] px-4 text-center my-10 flex flex-col gap-6 bg-black pb-10 2xl:pb-0">
+                <div className="flex flex-col 2xl:flex-row justify-between gap-4">
                     <img src={imgWhiteLogo} className="max-w-[20svw]" />
                     <div className="flex flex-row gap-4 items-center">
                         <p>Acompanhe nas redes</p>
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="text-left border-t border-white/10 pt-6 flex flex-col md:flex-row  justify-between gap-6">
+                <div className="text-left border-t border-white/10 pt-6 flex flex-col 2xl:flex-row  justify-between gap-6">
                     <div>
                         <p>+55 (27) 99781-9858</p>
                         <p>contato@directy.com.br</p>

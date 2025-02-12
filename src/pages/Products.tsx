@@ -15,11 +15,11 @@ const Products: React.FC = () => {
     return (
         <>
             <div className="flex flex-col items-center gap-40 pb-20   overflow-x-hidden">
-                <section className="max-w-[1280px] flex px-4 md:px-0 items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
+                <section className="max-w-[1280px] flex px-4 2xl:px-0 items-start w-full flex-col gap-10 pt-6 xl:pt-10 2xl:pt-20">
                     <Breadcrumbs />
-                    <div className="flex flex-col md:flex-row md:gap-40 md:justify-between h-full min-h-[60svh] relative max-w-svw">
-                        <div className="md:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
-                            <h1 className="text-5xl md:text-6xl font-bold">
+                    <div className="flex flex-col xl:flex-row 2xl:gap-40 2xl:justify-between h-full min-h-[60svh] relative max-w-svw">
+                        <div className="2xl:max-w-[50%] flex flex-col gap-6 max-w-[90%] mx-auto w-full">
+                            <h1 className="text-5xl 2xl:text-6xl font-bold">
                                 {currentProduct?.name}
                             </h1>
                             <div className="flex flex-row gap-10">
@@ -31,8 +31,8 @@ const Products: React.FC = () => {
                             </div>
                         </div>
                         <Slide direction="right" className="max-w-[90%] mx-auto w-full">
-                            <div className="md:-mt-20 mt-10 relative flex items-center justify-center ">
-                                <div className="rounded-full md:h-[60svh] mx-auto 2xl:max-w-full relative aspect-square  items-center flex border border-gray-500/40 p-10">
+                            <div className="2xl:-mt-20 mt-10 relative flex items-center justify-center ">
+                                <div className="rounded-full 2xl:h-[60svh] mx-auto 2xl:max-w-full relative aspect-square  items-center flex border border-gray-500/40 p-10">
                                     <div className="rounded-full relative bg-petrol-400 size-full aspect-square max-w-[60svw] max-h-[60svw] mx-auto justify-center items-center flex border-[1rem] overflow-hidden">
                                         <img
                                             className="size-full object-cover aspect-square"
@@ -53,18 +53,18 @@ const Products: React.FC = () => {
                         <ChevronDownIcon className="size-6 animate-bounce mx-auto" />
                     </div>
                 </section>
-                <section className="w-full max-w-[1280px] px-4 md:px-0 flex flex-col gap-20">
+                <section className="w-full max-w-[1280px] px-4 2xl:px-0 flex flex-col gap-20">
                     <div className="flex flex-col gap-4">
                         <Fade>
                             <p className="uppercase font-bold text-sm">Benefícios</p>
                         </Fade>
                         <Slide direction="right">
-                            <p className="md:max-w-[60%] font-bold text-4xl">
+                            <p className="2xl:max-w-[60%] font-bold text-4xl">
                                 {currentProduct?.pagePhrase}
                             </p>
                         </Slide>
                         <Slide direction="left">
-                            <p className="md:max-w-[50%] text-sm mr-0 ml-auto">
+                            <p className="2xl:max-w-[50%] text-sm mr-0 ml-auto">
                                 {currentProduct?.pageDesc}
                             </p>
                         </Slide>

@@ -33,8 +33,11 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
     const forceRenderKey = imageHeight;
 
     return (
-        <div ref={sectionRef} className="relative w-full h-[100svh] flex items-center justify-center bg-black">
-            <motion.div style={{ width, x, y }} className={`absolute top-0 left-0 hidden md:flex`}>
+        <div
+            ref={sectionRef}
+            className="relative w-full h-[100svh] flex items-center justify-center bg-black"
+        >
+            <motion.div style={{ width, x, y }} className={`absolute top-0 left-0 hidden 2xl:flex`}>
                 <img
                     ref={imgRef}
                     src={imgAboutWork}
@@ -49,11 +52,11 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
 
             <section
                 id="about"
-                className="w-full max-w-[1280px]   px-4 flex flex-col md:flex-row relative z-10 mb-[12svh] -mt-96 md:mt-auto "
+                className="w-full max-w-[1280px]   px-4 flex flex-col 2xl:flex-row relative z-10 mb-[12svh] -mt-96 2xl:mt-auto "
             >
-                <Fade className="md:w-[45%] flex mb-0 mt-auto">
+                <Fade className="2xl:w-[45%] flex mb-0 mt-auto">
                     <div className="flex-col gap-4">
-                        <p className="font-bold text-3xl sm:text-4xl md:text-5xl">
+                        <p className="font-bold text-3xl sm:text-4xl 2xl:text-5xl">
                             SOMOS A <span className="text-petrol-400">DIRECTY</span>
                         </p>
                         <AboutCard abouts={assets} />
@@ -69,7 +72,14 @@ const AboutSection: React.FC<{ assets: About[] }> = ({ assets }) => {
             </section>
 
             <div key={forceRenderKey} className="absolute bottom-0 left-1/2 p-4 z-10">
-                <AnimatedText text="#Directeam" speed={7} color="white" size={18} opacity={0.8} delay={3} />
+                <AnimatedText
+                    text="#Directeam"
+                    speed={7}
+                    color="white"
+                    size={18}
+                    opacity={0.8}
+                    delay={3}
+                />
             </div>
         </div>
     );

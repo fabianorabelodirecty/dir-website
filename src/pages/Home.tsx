@@ -56,18 +56,19 @@ const Home: React.FC = () => {
                 <div className="flex flex-col gap-48 w-full items-center relative z-10 overflow-x-hidden">
                     {/* Hero Section */}
                     <section id="start" className="w-full max-w-[1280px] px-4">
-                        <div className="w-full max-w-[90%] md:max-w-[70%] h-[80svh] flex items-center justify-start">
+                        <div className="w-full max-w-[90%] 2xl:max-w-[70%] h-[80svh] flex items-center justify-start">
                             <div className="flex flex-col items-start h-[80%] mt-[2%] gap-6">
                                 <animated.h1
                                     style={fadeIn}
-                                    className="font-bold text-4xl sm:text-4xl md:text-6xl md:text-6xl 2xl:text-7xl uppercase"
+                                    className="font-bold text-4xl sm:text-4xl xl:text-6xl 2xl:text-7xl uppercase"
                                 >
                                     {text}
                                 </animated.h1>
                                 <Fade>
                                     <h2 className="font-extralight text-base">
-                                        Automatize processos, otimize recursos e transforme a operação da sua empresa
-                                        com as soluções tecnológicas da Directy.
+                                        Automatize processos, otimize recursos e transforme a
+                                        operação da sua empresa com as soluções tecnológicas da
+                                        Directy.
                                     </h2>
                                 </Fade>
                                 <Link
@@ -93,15 +94,15 @@ const Home: React.FC = () => {
                         <div className="w-full max-w-[1280px] mx-auto py-20 px-4">
                             <Fade direction="up">
                                 <div className="flex flex-col items-center gap-6">
-                                    <h1 className="text-center font-bold text-3xl sm:text-4xl md:text-5xl uppercase text-black">
+                                    <h1 className="text-center font-bold text-3xl sm:text-4xl 2xl:text-5xl uppercase text-black">
                                         Nossos serviços
                                     </h1>
-                                    <h2 className="text-center font-extralight text-black text-sm sm:text-base md:text-lg">
+                                    <h2 className="text-center font-extralight text-black text-sm sm:text-base 2xl:text-lg">
                                         Conheça um pouco sobre os serviços que oferecemos
                                     </h2>
                                 </div>
                             </Fade>
-                            <div className="md:flex flex-row min-h-96 gap-4 mt-10 -ml-4 hidden">
+                            <div className="2xl:flex flex-row min-h-96 gap-4 mt-10 -ml-4 hidden">
                                 {services.map((service, index) => (
                                     <Slide
                                         className="w-full hover:z-10"
@@ -116,7 +117,7 @@ const Home: React.FC = () => {
                                     </Slide>
                                 ))}
                             </div>
-                            <div className="h-fit flex md:hidden">
+                            <div className="h-fit flex 2xl:hidden">
                                 <Slider
                                     items={services}
                                     renderItem={(service) => (
@@ -133,7 +134,7 @@ const Home: React.FC = () => {
                     <section id="products" className="w-full max-w-[1280px] px-4 -mt-10 bg-black">
                         <Fade direction="up" triggerOnce>
                             <div className="flex flex-col items-center mt-10 gap-6">
-                                <h1 className="text-center font-bold text-3xl sm:text-4xl md:text-5xl uppercase">
+                                <h1 className="text-center font-bold text-3xl sm:text-4xl 2xl:text-5xl uppercase">
                                     Nossos produtos
                                 </h1>
                             </div>
@@ -146,8 +147,11 @@ const Home: React.FC = () => {
                                     delay={index * 100}
                                     triggerOnce
                                 >
-                                    <div className="w-full sm:w-[48%] md:w-fit">
-                                        <ProductCard product={product} direction={index % 2 === 0 ? "right" : "left"} />
+                                    <div className="w-full 2xl:w-fit">
+                                        <ProductCard
+                                            product={product}
+                                            direction={index % 2 === 0 ? "right" : "left"}
+                                        />
                                     </div>
                                 </Slide>
                             ))}
@@ -161,14 +165,14 @@ const Home: React.FC = () => {
                                 <Slide
                                     direction="left"
                                     duration={500}
-                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden md:flex"
+                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden 2xl:flex"
                                 >
                                     <img src={imgDetailsL} className="ml-0 mr-auto" />
                                 </Slide>
                                 <Slide
                                     direction="right"
                                     duration={500}
-                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden md:flex"
+                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden 2xl:flex"
                                 >
                                     <img src={imgDetailsR} className="ml-auto mr-0" />
                                 </Slide>
@@ -183,10 +187,17 @@ const Home: React.FC = () => {
                     <AboutSection assets={AboutsAssets} />
 
                     {/* Feedback */}
-                    <section id="fedbacks" className="w-full relative bg-black flex flex-col gap-10 -mt-10">
+                    <section
+                        id="fedbacks"
+                        className="w-full relative bg-black flex flex-col gap-10 -mt-10"
+                    >
                         <div className="flex flex-col gap-2">
-                            <p className="text-center text-sm  font-bold mx-auto uppercase opacity-80">Testemunhos</p>
-                            <p className="text-center mx-auto text-5xl font-bold">O que nossos clientes dizem</p>
+                            <p className="text-center text-sm  font-bold mx-auto uppercase opacity-80">
+                                Testemunhos
+                            </p>
+                            <p className="text-center mx-auto text-5xl font-bold">
+                                O que nossos clientes dizem
+                            </p>
                         </div>
                         <Slider
                             items={FeedbacksAssets}
@@ -200,7 +211,7 @@ const Home: React.FC = () => {
                         className="mb-28 relative w-full flex flex-col items-center gap-16 px-4 bg-black"
                     >
                         <Fade>
-                            <p className="text-center text-4xl sm:text-5xl font-bold md:max-w-[50vw] mx-auto z-10">
+                            <p className="text-center text-4xl sm:text-5xl font-bold 2xl:max-w-[50vw] mx-auto z-10">
                                 Vamos criar algo incrível juntos?
                             </p>
                         </Fade>
