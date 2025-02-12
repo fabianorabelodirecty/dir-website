@@ -1,84 +1,89 @@
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
-import React from "react";
+import {
+    CheckBadgeIcon,
+    GlobeAmericasIcon,
+    HandThumbUpIcon,
+    ScaleIcon,
+    SparklesIcon,
+    StarIcon,
+} from "@heroicons/react/24/outline";
+import React, { ReactNode } from "react";
+import imgLighthouse from "../assets/imgs/lighthouse.png";
+import { Fade, Slide } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
+import imgDetailsContact from "../assets/imgs/contact-details.png";
 
 const About: React.FC = () => {
     return (
         <div className=" mx-auto flex flex-col relative z-10 overflow-x-hidden min-h-fit">
             {/* Sobre nós */}
-            <section className="mb-10 max-w-[1280px] w-full mx-auto">
-                <h1 className="text-3xl font-bold mb-4">Sobre Nós</h1>
-                <p className="text-lg">
-                    Na Directy, nossa cultura reflete a seriedade e a dedicação que colocamos em
-                    cada projeto.
-                </p>
-            </section>
-
-            {/* Nossa Cultura */}
-            <section className="mb-10 max-w-[1280px] w-full mx-auto">
-                <h2 className="text-2xl font-semibold mb-3">Nossa Cultura</h2>
-                <p className="italic text-gray-600 mb-4">
-                    <strong>Compromisso com Excelência, Ética e Resultados</strong>
-                </p>
-                <ul className="space-y-3">
-                    <li className="flex items-start">
-                        <CheckCircleIcon className="h-6 w-6 text-blue-600 mt-1 mr-2" />
-                        <span>
-                            <strong>Tradição com Inovação:</strong> Combinamos práticas consolidadas
-                            com tecnologias avançadas.
-                        </span>
-                    </li>
-                    <li className="flex items-start">
-                        <CheckCircleIcon className="h-6 w-6 text-blue-600 mt-1 mr-2" />
-                        <span>
-                            <strong>Qualidade Inquestionável:</strong> Seguimos altos padrões para
-                            reduzir falhas e garantir resultados consistentes.
-                        </span>
-                    </li>
-                    <li className="flex items-start">
-                        <CheckCircleIcon className="h-6 w-6 text-blue-600 mt-1 mr-2" />
-                        <span>
-                            <strong>Parceria de Confiança:</strong> Nos tornamos aliados
-                            estratégicos para alcançar objetivos sustentáveis.
-                        </span>
-                    </li>
-                </ul>
+            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[50svh] items-center flex z-10">
+                <h1 className="text-3xl font-bold mb-4 lg:max-w-[60%]">
+                    Na Directy, nossa cultura reflete a seriedade e a dedicação que colocamos em cada projeto.
+                </h1>
             </section>
 
             {/* Nosso Compromisso */}
-            <section className="mb-10 max-w-[1280px] w-full mx-auto">
-                <h2 className="text-2xl font-semibold mb-3">Nosso Compromisso</h2>
-                <p className="text-lg mb-4">
-                    Trabalhamos lado a lado com nossos clientes para desenvolver soluções
-                    tecnológicas que superam expectativas.
-                </p>
-                <ul className="space-y-3">
-                    <li className="flex items-start">
-                        <CheckCircleIcon className="h-6 w-6 text-green-600 mt-1 mr-2" />
-                        <span>
-                            <strong>Ética e Integridade:</strong> Garantimos transparência em cada
-                            etapa do projeto.
-                        </span>
-                    </li>
-                    <li className="flex items-start">
-                        <CheckCircleIcon className="h-6 w-6 text-green-600 mt-1 mr-2" />
-                        <span>
-                            <strong>Excelência Personalizada:</strong> Desenvolvemos soluções
-                            adaptadas sem comprometer a qualidade.
-                        </span>
-                    </li>
-                    <li className="flex items-start">
-                        <CheckCircleIcon className="h-6 w-6 text-green-600 mt-1 mr-2" />
-                        <span>
-                            <strong>Impacto Sustentável:</strong> Promovemos eficiência, crescimento
-                            e sustentabilidade.
-                        </span>
-                    </li>
-                </ul>
+            <section className="w-full relative  bg-white text-black pt-8">
+                <img
+                    src={imgLighthouse}
+                    draggable={false}
+                    className="absolute right-[2svw] -top-80 opacity-30 h-80 aspect-[44/20] min-w-[44rem] max-w-none"
+                />
+                <div className="max-w-[1280px] mx-auto py-10">
+                    <h2 className="text-2xl font-semibold mb-1">Nosso Compromisso</h2>
+                    <p className="mb-8 opacity-80">
+                        Trabalhamos lado a lado com nossos clientes para desenvolver soluções tecnológicas que superam
+                        expectativas.
+                    </p>
+                    <div className="grid grid-cols-3 gap-20">
+                        <AboutCard
+                            icon={<ScaleIcon className="size-8" />}
+                            title="Ética e Integridade"
+                            content="Garantimos transparência em cada etapa do projeto."
+                        />
+                        <AboutCard
+                            icon={<StarIcon className="size-8" />}
+                            title="Excelência Personalizada"
+                            content="Desenvolvemos soluções adaptadas sem comprometer a qualidade."
+                        />
+                        <AboutCard
+                            icon={<GlobeAmericasIcon className="size-8" />}
+                            title="Impacto Sustentável"
+                            content="Promovemos eficiência, crescimento e sustentabilidade."
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* Nossa Cultura */}
+            <section className="w-full bg-white text-black pb-18">
+                <div className="max-w-[1280px] mx-auto py-10">
+                    <h2 className="text-2xl font-semibold mb-1">Nossa Cultura</h2>
+                    <p className="mb-8 opacity-80">Compromisso com Excelência, Ética e Resultados</p>
+                    <div className="grid grid-cols-3 gap-20">
+                        <AboutCard
+                            icon={<SparklesIcon className="size-8" />}
+                            title="Tradição com Inovação"
+                            content="Combinamos práticas consolidadas com tecnologias avançadas."
+                        />
+                        <AboutCard
+                            icon={<CheckBadgeIcon className="size-8" />}
+                            title="Qualidade Inquestionável"
+                            content="Seguimos altos padrões para reduzir falhas e garantir resultados consistentes."
+                        />
+                        <AboutCard
+                            icon={<HandThumbUpIcon className="size-8" />}
+                            title="Parceria de Confiança"
+                            content="Nos tornamos aliados estratégicos para alcançar objetivos sustentáveis."
+                        />
+                    </div>
+                </div>
             </section>
 
             {/* Nossa História */}
-            <section className="mb-10 min-h-96 px-[10svw]">
-                <h2 className="text-2xl font-semibold mb-3">Nossa História</h2>
+            <section className="mb-10 min-h-96 px-[10svw] mt-20">
+                <h2 className="text-3xl font-semibold mb-1 text-center">Nossa História</h2>
+                <p className="mb-8 text-center opacity-80 text-sm">Conheça um pouco da trajetória da Directy</p>
                 <div className="relative">
                     {/* Timeline Horizontal (Desktop) */}
                     <div className="hidden md:flex items-center justify-center py-6">
@@ -128,18 +133,10 @@ const About: React.FC = () => {
                                 >
                                     {item.year}
                                 </div>
-                                <div
-                                    className={`text-lg mt-2 ${
-                                        index % 2 === 0 ? "text-left" : "text-right"
-                                    }`}
-                                >
+                                <div className={`text-lg mt-2 ${index % 2 === 0 ? "text-left" : "text-right"}`}>
                                     {item.title}
                                 </div>
-                                <p
-                                    className={`mt-2 text-gray-400 ${
-                                        index % 2 === 0 ? "text-left" : "text-right"
-                                    }`}
-                                >
+                                <p className={`mt-2 text-gray-400 ${index % 2 === 0 ? "text-left" : "text-right"}`}>
                                     {item.content}
                                 </p>
                             </div>
@@ -147,6 +144,38 @@ const About: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Contato */}
+            <section id="contact" className="mb-28 relative w-full flex flex-col items-center gap-16 px-4 bg-black">
+                <Fade>
+                    <p className="text-center text-4xl sm:text-5xl font-bold lg:max-w-[50vw] mx-auto z-10">
+                        Vamos criar algo incrível juntos?
+                    </p>
+                </Fade>
+                <Slide direction="up" className="z-10">
+                    <Link
+                        to="/contacts/message"
+                        className="rounded-full border border-white px-6 py-2 mx-auto w-fit z-10 hover:opacity-50 transition-all"
+                    >
+                        Entre em contato
+                    </Link>
+                </Slide>
+                <img src={imgDetailsContact} className="-mt-40 z-0" />
+            </section>
+        </div>
+    );
+};
+
+const AboutCard: React.FC<{ icon: ReactNode; title: string; content: string }> = ({ icon, title, content }) => {
+    return (
+        <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col w-full items-start gap-2 border-b-[3px] border-petrol-400 pb-3">
+                {icon}
+                <p className="text-center font-bold">{title}</p>
+            </div>
+            <div className="w-full">
+                <p className="text-sm text-left">{content}</p>
+            </div>
         </div>
     );
 };
@@ -155,8 +184,7 @@ const timeline = [
     {
         year: "2016",
         title: "Ano de fundação",
-        content:
-            "Aqui iniciamos nosso sonho de entregar projetos de alta qualidade no setor de tecnologia.",
+        content: "Aqui iniciamos nosso sonho de entregar projetos de alta qualidade no setor de tecnologia.",
     },
     {
         year: "2017",

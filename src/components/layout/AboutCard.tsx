@@ -37,7 +37,7 @@ const AboutCard: React.FC<{ abouts: About[] }> = ({ abouts }) => {
                             key={index}
                             className={`size-2 rounded-full ${index === currentPage ? "bg-white" : "bg-gray-300/50"}`}
                             onClick={() => setCurrentPage(index)}
-                        ></button>
+                        />
                     ))}
                 </div>
             </div>

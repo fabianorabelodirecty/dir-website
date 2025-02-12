@@ -66,9 +66,8 @@ const Home: React.FC = () => {
                                 </animated.h1>
                                 <Fade>
                                     <h2 className="font-extralight text-base">
-                                        Automatize processos, otimize recursos e transforme a
-                                        operação da sua empresa com as soluções tecnológicas da
-                                        Directy.
+                                        Automatize processos, otimize recursos e transforme a operação da sua empresa
+                                        com as soluções tecnológicas da Directy.
                                     </h2>
                                 </Fade>
                                 <Link
@@ -88,6 +87,7 @@ const Home: React.FC = () => {
                     <section id="services" className="bg-white w-full relative">
                         <img
                             src={imgLighthouse}
+                            draggable={false}
                             className="absolute right-[2svw] -top-80 opacity-30 h-80 aspect-[44/20] min-w-[44rem] max-w-none"
                         />
                         <div className="w-full max-w-[1280px] mx-auto py-20 px-4">
@@ -137,10 +137,7 @@ const Home: React.FC = () => {
                                     triggerOnce
                                 >
                                     <div className="w-full sm:w-[48%] lg:w-fit">
-                                        <ProductCard
-                                            product={product}
-                                            direction={index % 2 === 0 ? "right" : "left"}
-                                        />
+                                        <ProductCard product={product} direction={index % 2 === 0 ? "right" : "left"} />
                                     </div>
                                 </Slide>
                             ))}
@@ -176,17 +173,10 @@ const Home: React.FC = () => {
                     <AboutSection assets={AboutsAssets} />
 
                     {/* Feedback */}
-                    <section
-                        id="fedbacks"
-                        className="w-full relative bg-black flex flex-col gap-10 -mt-10"
-                    >
+                    <section id="fedbacks" className="w-full relative bg-black flex flex-col gap-10 -mt-10">
                         <div className="flex flex-col gap-2">
-                            <p className="text-center text-sm  font-bold mx-auto uppercase opacity-80">
-                                Testemunhos
-                            </p>
-                            <p className="text-center mx-auto text-5xl font-bold">
-                                O que nossos clientes dizem
-                            </p>
+                            <p className="text-center text-sm  font-bold mx-auto uppercase opacity-80">Testemunhos</p>
+                            <p className="text-center mx-auto text-5xl font-bold">O que nossos clientes dizem</p>
                         </div>
                         <Slider
                             items={FeedbacksAssets}

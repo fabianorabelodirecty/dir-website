@@ -5,6 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import ContactForm from "../components/layout/ContactForm";
 import ReasonsCard from "../components/layout/ReasonsCard";
 import { Fade, Slide } from "react-awesome-reveal";
+import React from "react";
 
 const Products: React.FC = () => {
     const { product } = useParams();
@@ -61,11 +62,16 @@ const Products: React.FC = () => {
                     <Slide direction="up">
                         <div className="w-full">
                             {currentProduct?.reasons?.map((item, i) => {
-                                if (i === 0) return <ReasonsCard reason={item} />;
                                 return (
-                                    <div className={"-mt-1"}>
-                                        <ReasonsCard reason={item} />
-                                    </div>
+                                    <React.Fragment key={item.title}>
+                                        {i === 0 ? (
+                                            <ReasonsCard reason={item} />
+                                        ) : (
+                                            <div className={"-mt-1"}>
+                                                <ReasonsCard reason={item} />
+                                            </div>
+                                        )}
+                                    </React.Fragment>
                                 );
                             })}
                         </div>
