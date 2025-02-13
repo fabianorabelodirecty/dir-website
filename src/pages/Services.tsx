@@ -32,7 +32,7 @@ const Services: React.FC = () => {
                         </div>
                         <Slide direction="right" className="max-w-[90%] mx-auto w-full">
                             <div className="2xl:-mt-20 mt-10 relative ">
-                                <div className="rounded-full animate-slow-spin 2xl:h-[60svh] 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
+                                <div className="rounded-full animate-slow-spin 2xl:max-w-full relative aspect-square items-center flex border border-gray-500/40">
                                     <div
                                         className="p-2 absolute -right-2 rounded-full"
                                         style={{ backgroundColor: currentService?.color }}
