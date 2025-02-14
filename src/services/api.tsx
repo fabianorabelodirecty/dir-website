@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ContactReq, WorkWithUsReq } from "../utils/types/reqs/ContactFormData";
 import { showToast } from "../utils/functions/toastHandler";
+import { toBase64 } from "../utils/functions/toBase64";
 
 // const backendLink = "http://localhost:3000";
 const backendLink = "https://newdirectyback.directy.com.br";
@@ -25,7 +26,7 @@ class Requests {
         return showToast(
             axiosInstance.post("/trabalheConosco", {
                 ...formData,
-                curriculo: formData.curriculo,
+                curriculo: formData.curriculo ? await toBase64(formData.curriculo) : undefined,
             }),
             {
                 pending: "Enviando candidatura...",
