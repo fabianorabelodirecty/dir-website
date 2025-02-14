@@ -76,9 +76,9 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto flex flex-col 2xl:flex-row gap-10 pt-[4.5%] px-4 2xl:px-0">
-            <div className="2xl:w-1/2 flex flex-col justify-center">{getText(location)}</div>
-            <div className="2xl:w-1/2 bg-white/10 p-6 rounded-lg shadow-lg text-white mb-10">
+        <div className="max-w-[1280px] mx-auto flex flex-col 2xl:flex-row gap-10 pt-[4.5%] px-4 2xl:px-10">
+            <div className="2xl:w-1/2 flex flex-col justify-evenly">{getText(location)}</div>
+            <div className="2xl:w-1/2 bg-white/10 p-6 rounded-lg shadow-lg text-white">
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {Object.keys(formData).map((key) => {
                         return (
@@ -170,12 +170,12 @@ const getText = (location: ContactLocations): ReactNode => {
         case "message":
             return (
                 <>
-                    <h1 className="text-4xl font-bold mb-4">Fale com um consultor</h1>
+                    <h1 className="text-5xl font-bold mb-4">Fale com um consultor</h1>
                     <p className="text-lg text-gray-400 mb-10">
                         Entre em contato conosco e descubra como podemos ajudar a sua empresa a
                         alcançar os melhores resultados.
                     </p>
-                    <h2 className="text-2xl font-semibold mb-3">
+                    <h2 className="text-3xl font-semibold mb-3">
                         Que tipo de mindset você precisa?
                     </h2>
                     <div className="flex flex-col gap-4">

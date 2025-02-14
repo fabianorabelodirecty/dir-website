@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         <>
             <div>
                 {/* <ParticlesBg type="cobweb" color="#FFFFFF" bg={true} /> */}
-                <div className="flex flex-col gap-48 w-full items-center relative z-10 overflow-x-hidden">
+                <div className="flex flex-col gap-40 lg:gap-20 w-full items-center relative z-10 overflow-x-hidden">
                     {/* Hero Section */}
                     <section id="start" className="w-full max-w-[1280px] px-4">
                         <div className="w-full max-w-[90%] 2xl:max-w-[70%] h-[80svh] flex items-center justify-start">
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
                                     {text}
                                 </animated.h1>
                                 <Fade>
-                                    <h2 className="font-extralight text-base">
+                                    <h2 className="font-extralight text-lg">
                                         Automatize processos, otimize recursos e transforme a
                                         operação da sua empresa com as soluções tecnológicas da
                                         Directy.
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                     </section>
 
                     {/* Serviços */}
-                    <section id="services" className="bg-white w-full relative">
+                    <section id="services" className="bg-white w-full relative min-h-[80svh]">
                         <img
                             src={imgLighthouse}
                             draggable={false}
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
                                     <h1 className="text-center font-bold text-3xl sm:text-4xl 2xl:text-5xl uppercase text-black">
                                         Nossos serviços
                                     </h1>
-                                    <h2 className="text-center font-extralight text-black text-sm sm:text-base 2xl:text-lg">
+                                    <h2 className="text-center font-extralight text-black text-base 2xl:text-lg">
                                         Conheça um pouco sobre os serviços que oferecemos
                                     </h2>
                                 </div>
@@ -133,19 +133,20 @@ const Home: React.FC = () => {
                     {/* Produtos */}
                     <section id="products" className="w-full max-w-[1280px] px-4 -mt-10 bg-black">
                         <Fade direction="up" triggerOnce>
-                            <div className="flex flex-col items-center mt-10 gap-6">
+                            <div className="flex flex-col items-center mt-20 gap-6">
                                 <h1 className="text-center font-bold text-3xl sm:text-4xl 2xl:text-5xl uppercase">
                                     Nossos produtos
                                 </h1>
                             </div>
                         </Fade>
-                        <div className="flex flex-col mt-10 items-center gap-6 max-w-[1280px]">
+                        <div className="flex flex-col mt-4 items-center gap-6 max-w-[1280px]">
                             {ProductsAssets.map((product, index) => (
                                 <Slide
                                     key={index}
                                     direction={index % 2 === 0 ? "right" : "left"}
                                     delay={index * 100}
                                     triggerOnce
+                                    className="min-h-[80svh] flex items-center"
                                 >
                                     <div className="w-full 2xl:w-fit">
                                         <ProductCard
@@ -161,18 +162,18 @@ const Home: React.FC = () => {
                     {/* Treinamentos */}
                     <section id="trainings" className="w-full relative bg-black">
                         {TrainingsAssets.map((training, index) => (
-                            <div key={index}>
+                            <div key={index} className="min-h-[80svh] flex items-center relative">
                                 <Slide
                                     direction="left"
                                     duration={500}
-                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden 2xl:flex"
+                                    className="absolute left-0 w-[14%] mt-4 sm:w-[20%] hidden 2xl:flex top-10"
                                 >
                                     <img src={imgDetailsL} className="ml-0 mr-auto" />
                                 </Slide>
                                 <Slide
                                     direction="right"
                                     duration={500}
-                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden 2xl:flex"
+                                    className="absolute right-0 w-[14%] mt-4 sm:w-[20%] hidden 2xl:flex top-10"
                                 >
                                     <img src={imgDetailsR} className="ml-auto mr-0" />
                                 </Slide>
@@ -189,10 +190,10 @@ const Home: React.FC = () => {
                     {/* Feedback */}
                     <section
                         id="fedbacks"
-                        className="w-full relative bg-black flex flex-col gap-10 -mt-10"
+                        className="w-full relative bg-black flex flex-col gap-10 min-h-[80svh] "
                     >
                         <div className="flex flex-col gap-2">
-                            <p className="text-center text-sm  font-bold mx-auto uppercase opacity-80">
+                            <p className="text-center text-base  font-bold mx-auto uppercase opacity-80">
                                 Testemunhos
                             </p>
                             <p className="text-center mx-auto text-5xl font-bold">

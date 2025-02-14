@@ -17,8 +17,8 @@ const About: React.FC = () => {
     return (
         <div className=" mx-auto flex flex-col relative z-10 overflow-x-hidden min-h-fit">
             {/* Sobre nós */}
-            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[50svh] items-center flex z-10  px-4 2xl:px-0">
-                <h1 className="text-3xl font-bold mb-4 2xl:max-w-[60%]">
+            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[60svh] items-center flex z-10  px-4 2xl:px-0">
+                <h1 className="text-3xl lg:text-5xl font-bold mb-4 2xl:max-w-[60%]">
                     Na Directy, nossa cultura reflete a seriedade e a dedicação que colocamos em
                     cada projeto.
                 </h1>
@@ -87,7 +87,7 @@ const About: React.FC = () => {
             {/* Nossa História */}
             <section className="mb-20 2xl:mb-10 min-h-96 px-[10svw] mt-20 ">
                 <h2 className="text-3xl font-semibold mb-1 text-center">Nossa História</h2>
-                <p className="mb-8 text-center opacity-80 text-sm">
+                <p className="mb-8 text-center opacity-80 text-base">
                     Conheça um pouco da trajetória da Directy
                 </p>
                 <div className="relative">

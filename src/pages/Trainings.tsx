@@ -43,7 +43,7 @@ const Trainings: React.FC = () => {
                         <h2 className="font-bold text-4xl text-white mb-6">
                             Por que investir em um treinamento de Power BI?
                         </h2>
-                        <div className="grid grid-cols-1 2xl:grid-cols-2 2xl:grid-cols-3 gap-10 pb-6">
+                        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10 pb-6">
                             {transitions((style, item) => (
                                 <animated.div
                                     style={style}
@@ -58,8 +58,8 @@ const Trainings: React.FC = () => {
                                             0) + 1}
                                     </div>
                                     <div>
-                                        <p className="text-sm font-semibold">{item.title}</p>
-                                        <p className="text-sm leading-relaxed opacity-80 font-light">
+                                        <p className="text-base font-semibold">{item.title}</p>
+                                        <p className="text-base leading-relaxed opacity-80 font-light">
                                             {item.content}
                                         </p>
                                     </div>
@@ -72,7 +72,7 @@ const Trainings: React.FC = () => {
                 <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 2xl:px-0">
                     <div className="flex flex-col gap-4">
                         <p className="text-xl font-semibold">{currentTraining?.modes}</p>
-                        <p className="text-sm opacity-80">{currentTraining?.contentText}</p>
+                        <p className="text-base opacity-80">{currentTraining?.contentText}</p>
                     </div>
                 </section>
 
