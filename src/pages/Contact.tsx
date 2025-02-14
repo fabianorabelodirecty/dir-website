@@ -9,9 +9,7 @@ import { XCircleIcon } from "@heroicons/react/24/solid";
 type ContactLocations = "message" | "work-with-us";
 
 const Contact: React.FC = () => {
-    const location: ContactLocations = useLocation()
-        ?.pathname?.split("/")
-        .slice(-1)[0] as ContactLocations;
+    const location: ContactLocations = useLocation()?.pathname?.split("/").slice(-1)[0] as ContactLocations;
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -76,9 +74,9 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <div className="max-w-[1280px] mx-auto flex flex-col 2xl:flex-row gap-10 pt-[4.5%] px-4 2xl:px-10">
-            <div className="2xl:w-1/2 flex flex-col justify-evenly">{getText(location)}</div>
-            <div className="2xl:w-1/2 bg-white/10 p-6 rounded-lg shadow-lg text-white">
+        <div className="max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-10 pt-[4.5%] px-4 xl:px-10">
+            <div className="xl:w-1/2 flex flex-col justify-evenly">{getText(location)}</div>
+            <div className="xl:w-1/2 bg-white/10 p-6 rounded-lg shadow-lg text-white">
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {Object.keys(formData).map((key) => {
                         return (
@@ -88,9 +86,7 @@ const Contact: React.FC = () => {
                                 <input
                                     type={key === "email" ? "email" : "text"}
                                     name={key}
-                                    value={
-                                        (formData as ContactFormData)[key as keyof ContactFormData]
-                                    }
+                                    value={(formData as ContactFormData)[key as keyof ContactFormData]}
                                     onChange={handleChange}
                                     required
                                     className="border-b border-gray-400 p-2 outline-none focus:border-digital"
@@ -172,24 +168,20 @@ const getText = (location: ContactLocations): ReactNode => {
                 <>
                     <h1 className="text-5xl font-bold mb-4">Fale com um consultor</h1>
                     <p className="text-lg text-gray-400 mb-10">
-                        Entre em contato conosco e descubra como podemos ajudar a sua empresa a
-                        alcançar os melhores resultados.
+                        Entre em contato conosco e descubra como podemos ajudar a sua empresa a alcançar os melhores
+                        resultados.
                     </p>
-                    <h2 className="text-3xl font-semibold mb-3">
-                        Que tipo de mindset você precisa?
-                    </h2>
+                    <h2 className="text-3xl font-semibold mb-3">Que tipo de mindset você precisa?</h2>
                     <div className="flex flex-col gap-4">
                         <p className="text-gray-400">
-                            Nosso cardápio de soluções conta com produtos e serviços que abrangem as
-                            áreas de Analytics, BI, Big Data, Portais de Dados e Mobilidade.
+                            Nosso cardápio de soluções conta com produtos e serviços que abrangem as áreas de Analytics,
+                            BI, Big Data, Portais de Dados e Mobilidade.
                         </p>
                         <p className="text-gray-400">
-                            Através de uma consultoria, entendemos todas as necessidades do cliente
-                            para desenvolver soluções personalizadas que tragam melhores resultados.
+                            Através de uma consultoria, entendemos todas as necessidades do cliente para desenvolver
+                            soluções personalizadas que tragam melhores resultados.
                         </p>
-                        <p className="text-gray-400">
-                            Entre em contato conosco para agendarmos uma conversa.
-                        </p>
+                        <p className="text-gray-400">Entre em contato conosco para agendarmos uma conversa.</p>
                     </div>
                 </>
             );
@@ -200,19 +192,17 @@ const getText = (location: ContactLocations): ReactNode => {
                     <h1 className="text-4xl font-bold mb-4">Trabalhe Conosco</h1>
                     <div className="flex flex-col gap-4">
                         <p className="text-lg text-gray-400">
-                            Na Directy, acreditamos na excelência, na inovação e no compromisso com
-                            resultados sólidos. Nossa equipe é movida por desafios e pela busca
-                            constante por soluções estratégicas que fazem a diferença no mercado.
+                            Na Directy, acreditamos na excelência, na inovação e no compromisso com resultados sólidos.
+                            Nossa equipe é movida por desafios e pela busca constante por soluções estratégicas que
+                            fazem a diferença no mercado.
                         </p>
                         <p className="text-lg text-gray-400">
-                            Se você é uma pessoa que valoriza a precisão nos processos, a
-                            integridade nas relações e a busca contínua por conhecimento, queremos
-                            te conhecer. Aqui, cada profissional tem a oportunidade de crescer,
-                            impactar grandes projetos e construir uma trajetória de sucesso.
+                            Se você é uma pessoa que valoriza a precisão nos processos, a integridade nas relações e a
+                            busca contínua por conhecimento, queremos te conhecer. Aqui, cada profissional tem a
+                            oportunidade de crescer, impactar grandes projetos e construir uma trajetória de sucesso.
                         </p>
                         <p className="text-lg text-gray-400 mb-14">
-                            📩 Envie seu currículo e venha fazer parte da transformação com a
-                            Directy!
+                            📩 Envie seu currículo e venha fazer parte da transformação com a Directy!
                         </p>
                     </div>
                 </>
@@ -223,24 +213,20 @@ const getText = (location: ContactLocations): ReactNode => {
                 <>
                     <h1 className="text-4xl font-bold mb-4">Fale com um consultor</h1>
                     <p className="text-lg text-gray-700 mb-14">
-                        Entre em contato conosco e descubra como podemos ajudar a sua empresa a
-                        alcançar os melhores resultados.
+                        Entre em contato conosco e descubra como podemos ajudar a sua empresa a alcançar os melhores
+                        resultados.
                     </p>
-                    <h2 className="text-2xl font-semibold mb-3">
-                        Que tipo de mindset você precisa?
-                    </h2>
+                    <h2 className="text-xl font-semibold mb-3">Que tipo de mindset você precisa?</h2>
                     <div className="flex flex-col gap-4">
                         <p className="text-gray-600">
-                            Nosso cardápio de soluções conta com produtos e serviços que abrangem as
-                            áreas de Analytics, BI, Big Data, Portais de Dados e Mobilidade.
+                            Nosso cardápio de soluções conta com produtos e serviços que abrangem as áreas de Analytics,
+                            BI, Big Data, Portais de Dados e Mobilidade.
                         </p>
                         <p className="text-gray-600">
-                            Através de uma consultoria, entendemos todas as necessidades do cliente
-                            para desenvolver soluções personalizadas que tragam melhores resultados.
+                            Através de uma consultoria, entendemos todas as necessidades do cliente para desenvolver
+                            soluções personalizadas que tragam melhores resultados.
                         </p>
-                        <p className="text-gray-600">
-                            Entre em contato conosco para agendarmos uma conversa.
-                        </p>
+                        <p className="text-gray-600">Entre em contato conosco para agendarmos uma conversa.</p>
                     </div>
                 </>
             );

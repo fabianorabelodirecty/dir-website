@@ -56,13 +56,13 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="flex flex-col 2xl:flex-row gap-10">
+            <form onSubmit={handleSubmit} className="flex flex-col xl:flex-row gap-10">
                 <div className="flex-[1] flex flex-col gap-4 my-auto">
                     <p className="font-bold text-xl">{title}</p>
                     <p className="font-light">{sub}</p>
                 </div>
                 <div className="flex-[1.5] my-auto">
-                    <div className="grid grid-cols-1 2xl:grid-cols-2 gap-6 gap-x-8 w-full">
+                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 gap-x-8 w-full">
                         {Object.keys(formData).map((key) => (
                             <div className="flex flex-col " key={key}>
                                 <label className="uppercase">{key}</label>
@@ -96,7 +96,7 @@ const ContactForm: React.FC<{ title?: string; sub?: string; color?: string }> = 
                 </div>
                 <button
                     disabled={isLoading}
-                    className="rounded-full px-6 py-2 2xl:aspect-square text-white hover:opacity-50 transition-all my-auto disabled:opacity-10"
+                    className="rounded-full px-6 py-2 xl:aspect-square text-white hover:opacity-50 transition-all my-auto disabled:opacity-10"
                     style={{ backgroundColor: color }}
                 >
                     Enviar

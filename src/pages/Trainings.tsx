@@ -23,13 +23,11 @@ const Trainings: React.FC = () => {
     return (
         <>
             <div className="flex flex-col items-center gap-32 pb-20">
-                <section className="max-w-[1280px] flex flex-col w-full gap-10 pt-6 xl:pt-10 2xl:pt-20 px-4 2xl:px-0">
+                <section className="max-w-[1280px] flex flex-col w-full gap-10 pt-6 xl:pt-10 xl:pt-20 px-4 xl:px-0">
                     <Breadcrumbs color={currentTraining?.color} />
                     <div className="flex flex-row gap-40 justify-between h-full min-h-[60svh]">
-                        <div className="2xl:max-w-[80%] flex flex-col gap-6">
-                            <h1 className="text-4xl 2xl:text-6xl font-bold">
-                                {currentTraining?.cta}
-                            </h1>
+                        <div className="xl:max-w-[80%] flex flex-col gap-6">
+                            <h1 className="text-4xl xl:text-6xl font-bold">{currentTraining?.cta}</h1>
                             <p>{currentTraining?.desc}</p>
                         </div>
                     </div>
@@ -38,24 +36,19 @@ const Trainings: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full max-w-[1280px] flex flex-col gap-16 py-8 px-4 2xl:px-0">
+                <section className="w-full max-w-[1280px] flex flex-col gap-16 py-8 px-4 xl:px-0">
                     <div className="flex flex-col gap-8">
                         <h2 className="font-bold text-4xl text-white mb-6">
                             Por que investir em um treinamento de Power BI?
                         </h2>
-                        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10 pb-6">
+                        <div className="grid grid-cols-1 xl:grid-cols-2 xl:grid-cols-3 gap-10 pb-6">
                             {transitions((style, item) => (
-                                <animated.div
-                                    style={style}
-                                    key={item.title}
-                                    className="flex flex-row gap-4"
-                                >
+                                <animated.div style={style} key={item.title} className="flex flex-row gap-4">
                                     <div
                                         className="flex items-center justify-center border border-petrol-400 aspect-square rounded-full size-10"
                                         style={{ borderColor: currentTraining?.color }}
                                     >
-                                        {(currentTraining?.reasons?.findIndex((i) => i === item) ||
-                                            0) + 1}
+                                        {(currentTraining?.reasons?.findIndex((i) => i === item) || 0) + 1}
                                     </div>
                                     <div>
                                         <p className="text-base font-semibold">{item.title}</p>
@@ -69,18 +62,16 @@ const Trainings: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 2xl:px-0">
+                <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 xl:px-0">
                     <div className="flex flex-col gap-4">
                         <p className="text-xl font-semibold">{currentTraining?.modes}</p>
                         <p className="text-base opacity-80">{currentTraining?.contentText}</p>
                     </div>
                 </section>
 
-                <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 2xl:px-0">
+                <section className="w-full max-w-[1280px] flex flex-col gap-16 px-4 xl:px-0">
                     <div className="flex flex-col gap-4">
-                        <p className="font-bold text-2xl text-center mb-8">
-                            {currentTraining?.titlePage}
-                        </p>
+                        <p className="font-bold text-xl text-center mb-8">{currentTraining?.titlePage}</p>
                         <Fade>
                             <div className="w-full">
                                 {currentTraining?.reasons?.map((item, i) => {
@@ -104,10 +95,7 @@ const Trainings: React.FC = () => {
                 <section className="w-full bg-white p-10 py-30 pt-24 text-black">
                     <Fade>
                         <div className="max-w-[1280px] mx-auto flex flex-col gap-14">
-                            <ContactForm
-                                title={currentTraining?.contactTitle}
-                                sub={currentTraining?.contactSub}
-                            />
+                            <ContactForm title={currentTraining?.contactTitle} sub={currentTraining?.contactSub} />
                         </div>
                     </Fade>
                 </section>

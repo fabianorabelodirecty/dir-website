@@ -17,27 +17,26 @@ const About: React.FC = () => {
     return (
         <div className=" mx-auto flex flex-col relative z-10 overflow-x-hidden min-h-fit">
             {/* Sobre nós */}
-            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[60svh] items-center flex z-10  px-4 2xl:px-0">
-                <h1 className="text-3xl lg:text-5xl font-bold mb-4 2xl:max-w-[60%]">
-                    Na Directy, nossa cultura reflete a seriedade e a dedicação que colocamos em
-                    cada projeto.
+            <section className="mb-10 max-w-[1280px] w-full mx-auto min-h-[60svh] items-center flex z-10  px-4 xl:px-0">
+                <h1 className="text-3xl lg:text-5xl font-bold mb-4 xl:max-w-[60%]">
+                    Na Directy, nossa cultura reflete a seriedade e a dedicação que colocamos em cada projeto.
                 </h1>
             </section>
 
             {/* Nosso Compromisso */}
-            <section className="w-full relative  bg-white text-black pt-8  px-4 2xl:px-0">
+            <section className="w-full relative  bg-white text-black pt-8  px-4 xl:px-0">
                 <img
                     src={imgLighthouse}
                     draggable={false}
                     className="absolute right-[2svw] -top-80 opacity-30 h-80 aspect-[44/20] min-w-[44rem] max-w-none"
                 />
                 <div className="max-w-[1280px] mx-auto py-10">
-                    <h2 className="text-2xl font-semibold mb-1">Nosso Compromisso</h2>
+                    <h2 className="text-xl font-semibold mb-1">Nosso Compromisso</h2>
                     <p className="mb-8 opacity-80">
-                        Trabalhamos lado a lado com nossos clientes para desenvolver soluções
-                        tecnológicas que superam expectativas.
+                        Trabalhamos lado a lado com nossos clientes para desenvolver soluções tecnológicas que superam
+                        expectativas.
                     </p>
-                    <div className="grid grid-cols-1 2xl:grid-cols-3 gap-20">
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-20">
                         <AboutCard
                             icon={<ScaleIcon className="size-8" />}
                             title="Ética e Integridade"
@@ -58,13 +57,11 @@ const About: React.FC = () => {
             </section>
 
             {/* Nossa Cultura */}
-            <section className="w-full bg-white text-black pb-18  px-4 2xl:px-0">
+            <section className="w-full bg-white text-black pb-18  px-4 xl:px-0">
                 <div className="max-w-[1280px] mx-auto py-10">
-                    <h2 className="text-2xl font-semibold mb-1">Nossa Cultura</h2>
-                    <p className="mb-8 opacity-80">
-                        Compromisso com Excelência, Ética e Resultados
-                    </p>
-                    <div className="grid grid-cols-1 2xl:grid-cols-3 gap-20">
+                    <h2 className="text-xl font-semibold mb-1">Nossa Cultura</h2>
+                    <p className="mb-8 opacity-80">Compromisso com Excelência, Ética e Resultados</p>
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-20">
                         <AboutCard
                             icon={<SparklesIcon className="size-8" />}
                             title="Tradição com Inovação"
@@ -85,18 +82,16 @@ const About: React.FC = () => {
             </section>
 
             {/* Nossa História */}
-            <section className="mb-20 2xl:mb-10 min-h-96 px-[10svw] mt-20 ">
+            <section className="mb-20 xl:mb-10 min-h-96 px-[10svw] mt-20 ">
                 <h2 className="text-3xl font-semibold mb-1 text-center">Nossa História</h2>
-                <p className="mb-8 text-center opacity-80 text-base">
-                    Conheça um pouco da trajetória da Directy
-                </p>
+                <p className="mb-8 text-center opacity-80 text-base">Conheça um pouco da trajetória da Directy</p>
                 <div className="relative">
                     {/* Timeline Horizontal (Desktop) */}
                     <Reveal
                         keyframes={fadeFromLeft}
                         duration={1000}
                         triggerOnce
-                        className="hidden 2xl:flex items-center justify-center py-6"
+                        className="hidden xl:flex items-center justify-center py-6"
                     >
                         <div className="relative w-full">
                             <div className="absolute inset-0 border-t-2 border-gray-400 top-3" />
@@ -133,7 +128,7 @@ const About: React.FC = () => {
                     </Reveal>
 
                     {/* Timeline Vertical (Mobile) */}
-                    <div className="2xl:hidden space-y-8">
+                    <div className="xl:hidden space-y-8">
                         {timeline.map((item, index) => (
                             <div key={index} className={`flex flex-col items-center`}>
                                 <div className="w-6 h-6 bg-blue-600 rounded-full border-4 border-gray-800" />
@@ -144,18 +139,10 @@ const About: React.FC = () => {
                                 >
                                     {item.year}
                                 </div>
-                                <div
-                                    className={`text-lg mt-2 ${
-                                        index % 2 === 0 ? "text-left" : "text-right"
-                                    }`}
-                                >
+                                <div className={`text-lg mt-2 ${index % 2 === 0 ? "text-left" : "text-right"}`}>
                                     {item.title}
                                 </div>
-                                <p
-                                    className={`mt-2 text-gray-400 ${
-                                        index % 2 === 0 ? "text-left" : "text-right"
-                                    }`}
-                                >
+                                <p className={`mt-2 text-gray-400 ${index % 2 === 0 ? "text-left" : "text-right"}`}>
                                     {item.content}
                                 </p>
                             </div>
@@ -165,12 +152,9 @@ const About: React.FC = () => {
             </section>
 
             {/* Contato */}
-            <section
-                id="contact"
-                className="mb-28 relative w-full flex flex-col items-center gap-16 px-4 bg-black"
-            >
+            <section id="contact" className="mb-28 relative w-full flex flex-col items-center gap-16 px-4 bg-black">
                 <Fade>
-                    <p className="text-center text-4xl sm:text-5xl font-bold 2xl:max-w-[50vw] mx-auto z-10">
+                    <p className="text-center text-4xl sm:text-5xl font-bold xl:max-w-[50vw] mx-auto z-10">
                         Vamos criar algo incrível juntos?
                     </p>
                 </Fade>
@@ -188,11 +172,7 @@ const About: React.FC = () => {
     );
 };
 
-const AboutCard: React.FC<{ icon: ReactNode; title: string; content: string }> = ({
-    icon,
-    title,
-    content,
-}) => {
+const AboutCard: React.FC<{ icon: ReactNode; title: string; content: string }> = ({ icon, title, content }) => {
     return (
         <div className="flex flex-col items-center gap-3">
             <div className="flex flex-col w-full items-start gap-2 border-b-[3px] border-petrol-400 pb-3">
@@ -210,8 +190,7 @@ const timeline = [
     {
         year: "2016",
         title: "Ano de fundação",
-        content:
-            "Aqui iniciamos nosso sonho de entregar projetos de alta qualidade no setor de tecnologia.",
+        content: "Aqui iniciamos nosso sonho de entregar projetos de alta qualidade no setor de tecnologia.",
     },
     {
         year: "2017",

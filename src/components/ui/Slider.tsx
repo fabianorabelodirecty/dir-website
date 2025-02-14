@@ -48,7 +48,7 @@ const Slider = <T,>({ items, renderItem }: SliderProps<T>) => {
                 {[...items, ...items].map((item, index) => (
                     <div
                         key={index}
-                        className="w-full 2xl:w-[66%] mx-2 p-4 shadow-lg text-center rounded-lg overflow-visible pt-10"
+                        className="w-full xl:w-[66%] mx-2 p-4 shadow-lg text-center rounded-lg overflow-visible pt-10"
                     >
                         {renderItem(item)}
                     </div>
